@@ -2,24 +2,13 @@
 import { Input } from "@/components/ui/input";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import productsData from "@/data/productsData";
 
 type Product = {
   id: number;
   name: string;
   image: string;
 };
-
-const products: Product[] = [
-  { id: 1, name: "Product 1", image: "https://via.placeholder.com/50" },
-  { id: 2, name: "Product 2", image: "https://via.placeholder.com/50" },
-  { id: 3, name: "Product 3", image: "https://via.placeholder.com/50" },
-  { id: 4, name: "Product 4", image: "https://via.placeholder.com/50" },
-  { id: 5, name: "Product 5", image: "https://via.placeholder.com/50" },
-  { id: 6, name: "Product 6", image: "https://via.placeholder.com/150" },
-  { id: 7, name: "Product 7", image: "https://via.placeholder.com/150" },
-  { id: 8, name: "Product 8", image: "https://via.placeholder.com/150" },
-  { id: 9, name: "Product 9", image: "/globe.svg" },
-];
 
 export function NavSearch() {
   const [query, setQuery] = useState("");
@@ -59,9 +48,9 @@ export function NavSearch() {
     setFocused(false);
   };
 
-  const filteredProducts = products
+  const filteredProducts = productsData
     .filter((product) =>
-      product.name.toLowerCase().includes(query.toLowerCase())
+      product.title.toLowerCase().includes(query.toLowerCase())
     )
     .slice(0, 5);
 
@@ -92,11 +81,11 @@ export function NavSearch() {
                 onClick={() => handleProductClick()}
               >
                 <img
-                  src={product.image}
-                  alt={product.name}
+                  src={product.src}
+                  alt={product.title}
                   className="mr-2 rounded w-8 h-8"
                 />
-                <span className="dark:text-secondary">{product.name}</span>
+                <span className="dark:text-secondary">{product.title}</span>
               </Link>
             ))
           ) : (
