@@ -12,7 +12,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-export function Navmenu() {
+export function NavMenu() {
   return (
     <NavigationMenu>
       <NavigationMenuList>

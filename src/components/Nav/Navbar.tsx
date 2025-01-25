@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { auth, signIn, signOut } from "@/auth";
-import { ToggleTheme } from "./ToggleTheme";
-import { Navmenu } from "./Navmenu";
+import { ToggleTheme } from "../theme/ToggleTheme";
+import { NavMenu } from "./NavMenu";
 import { NavSearch } from "./NavSearch";
 
 const Navbar = async () => {
@@ -24,7 +24,7 @@ const Navbar = async () => {
           <ToggleTheme />
         </div>
         <NavSearch />
-        <Navmenu />
+        <NavMenu />
         <div className="flex items-center gap-5">
           {session && session?.user ? (
             <>
