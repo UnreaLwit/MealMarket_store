@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const HomeBanner = () => {
   return (
@@ -11,12 +12,14 @@ const HomeBanner = () => {
         <h2 className="mb-4 font-semibold text-xl">
           При заказе от 1000 рублей доставка бесплатно
         </h2>
-        <Button
-          className="shadow-lg p-6 border rounded-lg font-bold text-xl"
-          variant="outline"
-        >
-          Заказать
-        </Button>
+        <Link href="/shop">
+          <Button
+            className="shadow-lg p-6 border rounded-lg font-bold text-xl"
+            variant="outline"
+          >
+            Заказать
+          </Button>
+        </Link>
       </div>
       <img
         className="object-contain"

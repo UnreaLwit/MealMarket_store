@@ -66,7 +66,7 @@ export function HomeCards({ className, ...props }: CardProps) {
 
             <CardFooter className="flex flex-col justify-center items-center">
               <CardTitle className="pb-2">{`${product.cost} ₽`}</CardTitle>
-              <Button className="w-full">Купить</Button>
+              <Button className="w-24 h-11 text-lg">Купить</Button>
             </CardFooter>
           </Card>
         </div>
