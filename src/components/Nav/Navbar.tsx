@@ -13,12 +13,18 @@ const Navbar = async () => {
   const session = await auth();
 
   return (
-    <header className="shadow-sm my-2 px-5 py-3 border rounded-lg">
+    <header className="shadow-sm my-2 mb-6 px-5 py-3 border rounded-lg">
       <nav className="flex justify-between items-center">
         <div className="flex items-center gap-5">
-          <Image src="/ShopIcon.webp" alt="logo" width={50} height={50}></Image>
+          <Image
+            className="drop-shadow-md"
+            src="/ShopIcon.webp"
+            alt="logo"
+            width={50}
+            height={50}
+          ></Image>
           <Link href="/">
-            <span className="text-3xl">MealMarket</span>
+            <span className="drop-shadow-md text-3xl">MealMarket</span>
           </Link>
 
           <ToggleTheme />
@@ -32,10 +38,11 @@ const Navbar = async () => {
                 className="block space-y-1 hover:bg-accent focus:bg-accent p-3 rounded-md hover:text-accent-foreground focus:text-accent-foreground no-underline leading-none transition-colors select-none outline-none"
                 href="/favorite"
               >
-                <MdFavorite size={20} />
+                <MdFavorite className="drop-shadow-md" size={20} />
               </Link>
 
               <span>{session?.user?.name}</span>
+
               <form
                 action={async () => {
                   "use server";

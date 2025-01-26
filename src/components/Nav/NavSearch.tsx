@@ -4,12 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import productsData from "@/data/productsData";
 
-type Product = {
-  id: number;
-  name: string;
-  image: string;
-};
-
 export function NavSearch() {
   const [query, setQuery] = useState("");
   const [focused, setFocused] = useState(false);
@@ -56,9 +50,9 @@ export function NavSearch() {
 
   return (
     <div
-      className={`relative w-64 ${
-        focused ? "w-96" : ""
-      } transition-width duration-300 search-container`}
+      className={`relative w-64 shadow-md ${
+        focused ? "w-80 " : ""
+      } transition-width duration-300 search-container `}
     >
       <Input
         type="text"
@@ -67,17 +61,17 @@ export function NavSearch() {
         onChange={handleInputChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        className="focus:border-gray-300 pr-10 focus:ring-0 w-full outline-none"
+        className="pr-10 focus:border-none focus:ring-0 w-full"
       />
 
       {focused && query && (
-        <div className="top-full right-0 left-0 z-10 absolute border-gray-200 bg-white shadow-md mt-1 border rounded-md dropdown">
+        <div className="top-full right-0 left-0 z-10 absolute border-gray-200 shadow-md mt-1 border rounded-md dropdown">
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
               <Link
                 key={product.id}
                 href={`/product/${product.id}`}
-                className="flex items-center border-gray-200 hover:bg-gray-100 p-2 border-b last:border-b-0 cursor-pointer"
+                className="flex items-center border-gray-200 dark:hover:bg-neutral-600 hover:bg-gray-100 p-2 border-b last:border-b-0 cursor-pointer"
                 onClick={() => handleProductClick()}
               >
                 <img
@@ -85,7 +79,7 @@ export function NavSearch() {
                   alt={product.title}
                   className="mr-2 rounded w-8 h-8"
                 />
-                <span className="dark:text-secondary">{product.title}</span>
+                <span className="">{product.title}</span>
               </Link>
             ))
           ) : (
