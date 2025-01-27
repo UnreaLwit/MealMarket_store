@@ -31,7 +31,7 @@ const stores = [
 
 const HomeStores = () => {
   return (
-    <div className="flex justify-center mb-6">
+    <div className="flex justify-center mb-8">
       {stores.map((store) => (
         <div key={store.id} className="m-2">
           <Card

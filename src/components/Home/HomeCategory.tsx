@@ -38,7 +38,7 @@ export function HomeCategory() {
           <Card
             key={i}
             className={cn(
-              "max-w-[200px] min-w-[200px] h-[100px] flex  justify-between items-center m-4 shadow-lg"
+              "max-w-[200px] min-w-[200px] h-[100px] flex  justify-between items-center ml-4 mr-4 mb-8 shadow-lg"
             )}
           >
             <CardHeader className="p-2 pr-0 pb-0 w-1/2 place-self-start">

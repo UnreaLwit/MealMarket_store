@@ -39,7 +39,7 @@ export function HomeCards({ className, ...props }: CardProps) {
   }, []);
 
   return (
-    <div className="flex flex-wrap justify-center mb-6">
+    <div className="flex flex-wrap justify-center mb-8">
       {randomProducts.map((product) => (
         <div key={product.id}>
           <Card

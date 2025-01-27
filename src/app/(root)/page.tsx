@@ -1,3 +1,4 @@
+import HomeAppBanner from "@/components/Home/HomeAppBanner";
 import HomeBanner from "@/components/Home/HomeBanner";
 import { HomeCards } from "@/components/Home/HomeCards";
 import { HomeCategory } from "@/components/Home/HomeCategory";
@@ -10,7 +11,7 @@ export default function HomePage() {
     <div>
       <HomeBanner />
       <HomeCategory />
-      <div className="flex justify-end items-center mt-4 mb-6 center">
+      <div className="flex justify-end items-center mb-8 center">
         <h1 className="mr-72 text-4xl">Популярные товары</h1>
         <Link className="flex items-center text-xl" href="/shop">
           Больше товаров
@@ -18,10 +19,11 @@ export default function HomePage() {
         </Link>
       </div>
       <HomeCards />
-      <div className="flex justify-center items-center mt-6 mb-4">
+      <div className="flex justify-center items-center mb-8">
         <h1 className="text-4xl">Магазины партнеры</h1>
       </div>
       <HomeStores />
+      <HomeAppBanner />
     </div>
   );
 }

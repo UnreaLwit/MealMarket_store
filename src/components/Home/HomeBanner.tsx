@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const HomeBanner = () => {
   return (
-    <div className="flex shadow-lg mb-4 border rounded-lg w-full h-[300px]">
-      <div className="flex flex-col justify-start items-start mt-10 ml-10 w-[40%]">
+    <div className="flex shadow-lg mb-8 border rounded-lg w-full h-auto">
+      <div className="flex flex-col justify-start items-start mt-10 mb-10 ml-10 w-[40%]">
         <h1 className="mb-4 font-extrabold text-4xl">
           Мы доставим магазин к вашему дому
         </h1>
@@ -22,11 +22,11 @@ const HomeBanner = () => {
         </Link>
       </div>
       <img
-        className="object-contain"
+        className="ml-8 object-contain"
         src="https://png.pngtree.com/png-vector/20240810/ourmid/pngtree-shopping-cart-full-of-groceries-on-white-backgrou-png-image_13423943.png"
         alt="корзина"
-        width={380}
-        height={380}
+        width={300}
+        height={300}
       />
     </div>
   );
