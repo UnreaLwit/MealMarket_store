@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="flex justify-center mb-8">
+    <div className="flex justify-center mt-8 mb-8">
       <div className="flex flex-col w-[80%]">
         <div className="flex justify-between">
           <div className="flex flex-col w-[30%]">

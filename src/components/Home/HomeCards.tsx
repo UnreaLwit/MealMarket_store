@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/card";
 import productsData from "@/data/productsData";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import useCartStore from "@/providers/ZustandContext";
 
 type CardProps = React.ComponentProps<typeof Card>;
 type Product = {
@@ -24,6 +26,7 @@ type Product = {
 
 export function HomeCards({ className, ...props }: CardProps) {
   const [randomProducts, setRandomProducts] = useState<Product[]>([]);
+  const { addToCart } = useCartStore();
 
   useEffect(() => {
     const shuffledProducts = [...productsData];
@@ -46,13 +49,15 @@ export function HomeCards({ className, ...props }: CardProps) {
       {...props}
     >
       <CardHeader>
-        <img
-          className="rounded-lg"
-          src={product.src}
-          alt={product.alt}
-          width={150}
-          height={150}
-        />
+        <Link href={`/product/${product.id}`}>
+          <img
+            className="rounded-lg"
+            src={product.src}
+            alt={product.alt}
+            width={150}
+            height={150}
+          />
+        </Link>
       </CardHeader>
 
       <CardContent className="flex justify-center items-center p-4 pt-0 text-center">
@@ -61,7 +66,12 @@ export function HomeCards({ className, ...props }: CardProps) {
 
       <CardFooter className="flex flex-col justify-center items-center">
         <CardTitle className="pb-2">{`${product.cost} ₽`}</CardTitle>
-        <Button className="w-24 h-11 text-lg">Купить</Button>
+        <Button
+          onClick={() => addToCart(product)}
+          className="w-24 h-11 text-lg"
+        >
+          Купить
+        </Button>
       </CardFooter>
     </Card>
   );

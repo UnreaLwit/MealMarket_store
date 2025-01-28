@@ -2,7 +2,8 @@ const productsData = [
   {
     id: 1,
     title: "Горошек зеленый",
-    description: "Нежный зеленый горошек, законсервированный в рассоле.",
+    description:
+      "Нежный зеленый горошек, законсервированный в рассоле. Отлично подходит для салатов, гарниров и различных блюд. Витаминный и питательный продукт, который сохраняет свежесть и аромат.",
     category: "Консервы",
     cost: 164,
     src: "https://spar-online.ru/upload/iblock/2c3/2c3d62fec012f011430795d478f2d2d6.jpg",
@@ -11,7 +12,8 @@ const productsData = [
   {
     id: 2,
     title: "Кукуруза сладкая",
-    description: "Сладкая кукуруза в зернах, идеальна для салатов.",
+    description:
+      "Сладкая кукуруза в зернах, идеальна для салатов, гарниров и различных блюд. Содержит много витаминов и минералов, что делает ее полезной добавкой к любому меню. Вкусная и питательная.",
     category: "Консервы",
     cost: 152,
     src: "https://calorizator.ru/sites/default/files/imagecache/product_512/product/corn-4.jpg",
@@ -20,7 +22,8 @@ const productsData = [
   {
     id: 3,
     title: "Фасоль белая",
-    description: "Белая фасоль в томатном соусе.",
+    description:
+      "Белая фасоль в томатном соусе. Отличный источник белка и клетчатки, идеально подходит для приготовления супов, рагу и гарниров. Соус придает блюду пикантный вкус и аромат.",
     category: "Консервы",
     cost: 370,
     src: "https://calorizator.ru/sites/default/files/imagecache/product_512/product/haricot-3.jpg",
@@ -29,7 +32,8 @@ const productsData = [
   {
     id: 4,
     title: "Тунец в масле",
-    description: "Кусочки тунца в оливковом масле.",
+    description:
+      "Кусочки тунца в оливковом масле. Высококачественная консерва, богатая белком и омега-3 жирными кислотами. Идеально подходит для салатов, бутербродов и закусок.",
     category: "Консервы",
     cost: 377,
     src: "https://main-cdn.sbermegamarket.ru/big1/hlr-system/-72/076/379/512/221/542/100047486461b0.jpg",
@@ -38,7 +42,8 @@ const productsData = [
   {
     id: 5,
     title: "Сардины в томате",
-    description: "Сардины в пикантном томатном соусе.",
+    description:
+      "Сардины в пикантном томатном соусе. Маленькие рыбки, богатые белком и витаминами, придают блюду насыщенный вкус и аромат. Идеальны для закусок и салатов.",
     category: "Консервы",
     cost: 139,
     src: "https://main-cdn.sbermegamarket.ru/big1/hlr-system/111/825/300/511/262/336/100045547733b0.jpg",
@@ -47,7 +52,8 @@ const productsData = [
   {
     id: 6,
     title: "Шпроты в масле",
-    description: "Копченые шпроты в масле.",
+    description:
+      "Копченые шпроты в масле. Маленькие рыбки, богатые белком и омега-3 жирными кислотами, придают блюду нежный и копченый вкус. Идеальны для закусок и бутербродов.",
     category: "Консервы",
     cost: 122,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/8b/d8/7dea504d0859e4ac38fbe876c2d7.jpg",
@@ -56,7 +62,8 @@ const productsData = [
   {
     id: 7,
     title: "Огурцы маринованные",
-    description: "Хрустящие маринованные огурчики.",
+    description:
+      "Хрустящие маринованные огурчики. Отлично подходят для салатов, закусок и гарниров. Свежий и пикантный вкус, богатый витаминами и минералами.",
     category: "Консервы",
     cost: 222,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/d8/50/3ef2a8cd992b3de52ee47c4c04c8.jpg",
@@ -65,7 +72,8 @@ const productsData = [
   {
     id: 8,
     title: "Помидоры консервированные",
-    description: "Спелые помидоры в собственном соку.",
+    description:
+      "Спелые помидоры в собственном соку. Отлично подходят для приготовления соусов, супов и гарниров. Богаты витаминами и минералами, сохраняют свежесть и аромат.",
     category: "Консервы",
     cost: 253,
     src: "https://kleinrusland.nl/453-large_default/pomidory-konservirovannye-ogonek.jpg",
@@ -74,7 +82,8 @@ const productsData = [
   {
     id: 9,
     title: "Икра кабачковая",
-    description: "Нежная кабачковая икра с овощами.",
+    description:
+      "Нежная кабачковая икра с овощами. Отлично подходит для закусок, бутербродов и гарниров. Богата витаминами и минералами, имеет пикантный и насыщенный вкус.",
     category: "Консервы",
     cost: 179,
     src: "https://storage-seafood-shop.storage.yandexcloud.net/iblock/26d/dkakkse4mvlf3b38qti5s29d22zcfc6s.jpg",
@@ -83,7 +92,8 @@ const productsData = [
   {
     id: 10,
     title: "Лечо",
-    description: "Венгерское лечо из перца, помидоров и лука.",
+    description:
+      "Венгерское лечо из перца, помидоров и лука. Отлично подходит для закусок, бутербродов и гарниров. Богато витаминами и минералами, имеет пикантный и насыщенный вкус.",
     category: "Консервы",
     cost: 168,
     src: "https://calorizator.ru/sites/default/files/imagecache/product_512/product/letcho-2.jpg",
@@ -92,7 +102,8 @@ const productsData = [
   {
     id: 11,
     title: "Ананасы консервированные",
-    description: "Кольца ананаса в сиропе.",
+    description:
+      "Кольца ананаса в сиропе. Отлично подходят для десертов, салатов и гарниров. Богаты витаминами и минералами, имеют сладкий и сочный вкус.",
     category: "Консервы",
     cost: 145,
     src: "https://main-cdn.sbermegamarket.ru/big1/hlr-system/422/440/332/112/101/4/100052289137b0.jpg",
@@ -101,7 +112,8 @@ const productsData = [
   {
     id: 12,
     title: "Персики консервированные",
-    description: "Сладкие персики в сиропе.",
+    description:
+      "Сладкие персики в сиропе. Отлично подходят для десертов, салатов и гарниров. Богаты витаминами и минералами, имеют сладкий и сочный вкус.",
     category: "Консервы",
     cost: 303,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/ec/7d/fa96b3f47d923a5a830db35xda13.jpg",
@@ -110,7 +122,8 @@ const productsData = [
   {
     id: 13,
     title: "Грибы маринованные",
-    description: "Ароматные маринованные грибочки.",
+    description:
+      "Ароматные маринованные грибочки. Отлично подходят для салатов, закусок и гарниров. Богаты витаминами и минералами, имеют пикантный и насыщенный вкус.",
     category: "Консервы",
     cost: 358,
     src: "https://cdn-img.perekrestok.ru/i/400x400-fit/xdelivery/files/87/3f/89260272d860a9f466911ae53ab1.jpg",
@@ -119,7 +132,8 @@ const productsData = [
   {
     id: 14,
     title: "Оливки зеленые",
-    description: "Зеленые оливки без косточек.",
+    description:
+      "Зеленые оливки без косточек. Отлично подходят для салатов, закусок и гарниров. Богаты витаминами и минералами, имеют пикантный и насыщенный вкус.",
     category: "Консервы",
     cost: 298,
     src: "https://gurmenia.am/u/items/AIhV7h23Z2Slv722ge.png",
@@ -128,7 +142,8 @@ const productsData = [
   {
     id: 15,
     title: "Маслины черные",
-    description: "Черные маслины без косточек.",
+    description:
+      "Черные маслины без косточек. Отлично подходят для салатов, закусок и гарниров. Богаты витаминами и минералами, имеют пикантный и насыщенный вкус.",
     category: "Консервы",
     cost: 248,
     src: "https://prodzapas.pro/wp-content/uploads/2016/10/%D0%9C%D0%B0%D1%81%D0%BB%D0%B8%D0%BD%D1%8B-%D0%98%D0%B1%D0%B5%D1%80%D0%B8%D0%BA%D0%B0-%D0%B1%D0%BA-420.jpg",
@@ -137,7 +152,8 @@ const productsData = [
   {
     id: 16,
     title: "Кукуруза бондюэль",
-    description: "Отборная кукуруза высшего качества.",
+    description:
+      "Отборная кукуруза высшего качества. Отлично подходит для салатов, гарниров и различных блюд. Богата витаминами и минералами, имеет сладкий и сочный вкус.",
     category: "Консервы",
     cost: 268,
     src: "https://media.komus.ru/medias/sys_master/root/h89/h6a/9101698105374/417840-1-800Wx800H.jpg",
@@ -146,7 +162,8 @@ const productsData = [
   {
     id: 17,
     title: "Горошек зелёный нежный",
-    description: "Очень нежный и сладкий горошек.",
+    description:
+      "Очень нежный и сладкий горошек. Отлично подходит для салатов, гарниров и различных блюд. Богат витаминами и минералами, сохраняет свежесть и аромат.",
     category: "Консервы",
     cost: 390,
     src: "https://apeti.ru/upload/iblock/8e0/900jr09fct6yg0uapues2a9la2rbnqwm/goroshek_bonduelle_zelenyy_nezhnyy_400_g.jpg",
@@ -155,7 +172,8 @@ const productsData = [
   {
     id: 18,
     title: "Фасоль стручковая",
-    description: "Стручковая фасоль, богатая витаминами.",
+    description:
+      "Стручковая фасоль, богатая витаминами. Отлично подходит для салатов, гарниров и различных блюд. Богата клетчаткой и белком, имеет нежный и свежий вкус.",
     category: "Консервы",
     cost: 297,
     src: "https://calorizator.ru/sites/default/files/imagecache/product_512/product/haricot-24.jpg",
@@ -164,7 +182,8 @@ const productsData = [
   {
     id: 19,
     title: "Томаты в собственном соку",
-    description: "Спелые томаты без кожицы в соку.",
+    description:
+      "Спелые томаты без кожицы в соку. Отлично подходит для приготовления соусов, супов и гарниров. Богаты витаминами и минералами, сохраняют свежесть    и аромат.",
     category: "Консервы",
     cost: 219,
     src: "https://main-cdn.sbermegamarket.ru/big1/hlr-system/111/188/253/611/262/324/100045547068b0.jpg",
@@ -173,7 +192,8 @@ const productsData = [
   {
     id: 20,
     title: "Компот из яблок",
-    description: "Домашний компот из свежих яблок.",
+    description:
+      "Домашний компот из свежих яблок. Отлично подходит для утоления жажды и улучшения пищеварения. Богат витаминами и минералами, имеет сладкий и освежающий вкус.",
     category: "Консервы",
     cost: 271,
     src: "https://myfresh.ru/images/h/e9b1033f19678483c0a08e6808386087/1200/product_image/image/7272/large2x_______-______-_.jpg",
@@ -182,7 +202,8 @@ const productsData = [
   {
     id: 21,
     title: "Говядина вырезка",
-    description: "Нежная говяжья вырезка, идеально для стейков.",
+    description:
+      "Нежная говяжья вырезка, идеально подходит для приготовления стейков. Высококачественное мясо, богатое белком и минералами. Идеально для гриля и запекания.",
     category: "Мясные продукты",
     cost: 230,
     src: "https://opttorg-horeca.ru/assets/images/catalog/meat/govyadina/vyrezka.jpg",
@@ -191,7 +212,8 @@ const productsData = [
   {
     id: 22,
     title: "Свинина окорок",
-    description: "Свежий свиной окорок для запекания.",
+    description:
+      "Свежий свиной окорок для запекания. Высококачественное мясо, богатое белком и минералами. Идеально для приготовления различных блюд, включая запеканки и рулеты.",
     category: "Мясные продукты",
     cost: 178,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/d8/52/77e85xdcca89911f8c7a62a870f7.jpg",
@@ -200,7 +222,8 @@ const productsData = [
   {
     id: 23,
     title: "Куриное филе",
-    description: "Диетическое куриное филе без кожи и костей.",
+    description:
+      "Диетическое куриное филе без кожи и костей. Высококачественное мясо, богатое белком и низким содержанием жира. Идеально для приготовления различных блюд, включая запеканки и салаты.",
     category: "Мясные продукты",
     cost: 115,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/3f/b8/b25201413290da32551a4b42a97c.jpg",
@@ -209,7 +232,8 @@ const productsData = [
   {
     id: 24,
     title: "Фарш говяжий",
-    description: "Свежий говяжий фарш для котлет и других блюд.",
+    description:
+      "Свежий говяжий фарш для котлет и других блюд. Высококачественное мясо, богатое белком и минералами. Идеально для приготовления котлет, тефтелей и фрикаделек.",
     category: "Мясные продукты",
     cost: 244,
     src: "https://cdn-img.perekrestok.ru/i/400x400-fit/xdelivery/files/4a/ab/30ec7813e69d7ff9231da02fda37.jpg",
@@ -218,7 +242,8 @@ const productsData = [
   {
     id: 25,
     title: "Колбаса вареная",
-    description: "Классическая вареная колбаса.",
+    description:
+      "Классическая вареная колбаса, идеально подходит для бутербродов и закусок. Высококачественное мясо, богатое белком и минералами. Имеет нежный и пикантный вкус.",
     category: "Мясные продукты",
     cost: 113,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/cc/b4/5f1e97163988af952434b56c518b.jpg",
@@ -227,7 +252,8 @@ const productsData = [
   {
     id: 26,
     title: "Сосиски молочные",
-    description: "Нежные молочные сосиски.",
+    description:
+      "Нежные молочные сосиски, идеально подходят для детей и взрослых. Высококачественное мясо, богатое белком и минералами. Имеют нежный и пикантный вкус.",
     category: "Мясные продукты",
     cost: 323,
     src: "https://www.repinskiy24.ru/image.php?id=4606609000609",
@@ -236,7 +262,8 @@ const productsData = [
   {
     id: 27,
     title: "Ветчина",
-    description: "Ароматная ветчина из свинины.",
+    description:
+      "Ароматная ветчина из свинины, идеально подходит для бутербродов и закусок. Высококачественное мясо, богатое белком и минералами. Имеет нежный и пикантный вкус.",
     category: "Мясные продукты",
     cost: 262,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/eb/44/1d70ed5de469d2912b8d9b59c0ab.jpg",
@@ -245,7 +272,8 @@ const productsData = [
   {
     id: 28,
     title: "Салями",
-    description: "Копченая колбаса салями.",
+    description:
+      "Копченая колбаса салями, идеально подходит для бутербродов и закусок. Высококачественное мясо, богатое белком и минералами. Имеет насыщенный и пикантный вкус.",
     category: "Мясные продукты",
     cost: 278,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/4c/73/d490663d21ab57ae84c2e1918e68.jpg",
@@ -254,7 +282,8 @@ const productsData = [
   {
     id: 29,
     title: "Карбонад",
-    description: "Копчено-вареный карбонад.",
+    description:
+      "Копчено-вареный карбонад, идеально подходит для бутербродов и закусок. Высококачественное мясо, богатое белком и минералами. Имеет насыщенный и пикантный вкус.",
     category: "Мясные продукты",
     cost: 313,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/d5/35/2ca405e877306656633a685e7882.jpg",
@@ -263,7 +292,8 @@ const productsData = [
   {
     id: 30,
     title: "Балык",
-    description: "Деликатесный балык из свинины.",
+    description:
+      "Деликатесный балык из свинины, идеально подходит для бутербродов и закусок. Высококачественное мясо, богатое белком и минералами. Имеет насыщенный и пикантный вкус.",
     category: "Мясные продукты",
     cost: 264,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/c5/6c/03e42000c9da2a3f447cd0c77761.jpg",
@@ -272,7 +302,8 @@ const productsData = [
   {
     id: 31,
     title: "Грудинка",
-    description: "Свиная грудинка для копчения или запекания.",
+    description:
+      "Свиная грудинка для копчения или запекания. Высококачественное мясо, богатое белком и минералами. Идеально для приготовления различных блюд, включая запеканки и рулеты.",
     category: "Мясные продукты",
     cost: 194,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/22/3f/540eda24c329aac8aa5bdf1a8a4a.jpg",
@@ -281,7 +312,8 @@ const productsData = [
   {
     id: 32,
     title: "Ребрышки свиные",
-    description: "Свиные ребрышки для гриля или запекания.",
+    description:
+      "Свиные ребрышки для гриля или запекания. Высококачественное мясо, богатое белком и минералами. Идеально для приготовления различных блюд, включая гриль и запеканки.",
     category: "Мясные продукты",
     cost: 213,
     src: "https://swlife.ru/image/cache/catalog/product/93/36/9336031f138fa85ec82fc68873101cda-628x628.webp",
@@ -290,7 +322,8 @@ const productsData = [
   {
     id: 33,
     title: "Куриные крылышки",
-    description: "Сочные куриные крылышки.",
+    description:
+      "Сочные куриные крылышки, идеально подходят для гриля и запекания. Высококачественное мясо, богатое белком и минералами. Идеально для приготовления различных блюд, включая закуски и гарниры.",
     category: "Мясные продукты",
     cost: 182,
     src: "https://cdn-img.perekrestok.ru/i/400x400-fit/xdelivery/files/15/a5/2c13217a138f8afxd29aaefcfexd.jpg",
@@ -299,7 +332,8 @@ const productsData = [
   {
     id: 34,
     title: "Бекон",
-    description: "Копченый бекон.",
+    description:
+      "Копченый бекон, идеально подходит для бутербродов и закусок. Высококачественное мясо, богатое белком и минералами. Имеет насыщенный и пикантный вкус.",
     category: "Мясные продукты",
     cost: 190,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/d2/c6/f23fb0b82f9c5701f5042148f36f.jpg",
@@ -308,7 +342,8 @@ const productsData = [
   {
     id: 35,
     title: "Сервелат",
-    description: "Колбаса сервелат.",
+    description:
+      "Колбаса сервелат, идеально подходит для бутербродов и закусок. Высококачественное мясо, богатое белком и минералами. Имеет нежный и пикантный вкус.",
     category: "Мясные продукты",
     cost: 244,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/51/38/9e9ac8517aceb8a910da6b65ea56.jpg",
@@ -317,7 +352,8 @@ const productsData = [
   {
     id: 36,
     title: "Окорочка куриные",
-    description: "Куриные окорочка.",
+    description:
+      "Куриные окорочка, идеально подходят для гриля и запекания. Высококачественное мясо, богатое белком и минералами. Идеально для приготовления различных блюд, включая закуски и гарниры.",
     category: "Мясные продукты",
     cost: 397,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/8c/a9/a2139546e785a6ab85b94c51b7dd.jpg",
@@ -326,7 +362,8 @@ const productsData = [
   {
     id: 37,
     title: "Фарш свиной",
-    description: "Свиной фарш.",
+    description:
+      "Свиной фарш, идеально подходит для котлет и других блюд. Высококачественное мясо, богатое белком и минералами.    Идеально для приготовления котлет, тефтелей и фрикаделек. Имеет насыщенный и пикантный вкус.",
     category: "Мясные продукты",
     cost: 112,
     src: "https://main-cdn.sbermegamarket.ru/big1/hlr-system/108/685/329/111/262/313/100045546433b0.jpg",
@@ -335,7 +372,8 @@ const productsData = [
   {
     id: 38,
     title: "Пельмени",
-    description: "Домашние пельмени с мясной начинкой.",
+    description:
+      "Домашние пельмени с мясной начинкой. Высококачественное мясо, богатое белком и минералами. Идеально для приготовления горячих блюд, таких как супы и вторые блюда. Имеют нежный и пикантный вкус.",
     category: "Мясные продукты",
     cost: 270,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/d0/02/601fc024a625baba7b1430da13a7.jpg",
@@ -344,7 +382,8 @@ const productsData = [
   {
     id: 39,
     title: "Мясной рулет",
-    description: "Запеченный мясной рулет.",
+    description:
+      "Запеченный мясной рулет, идеально подходит для горячих блюд. Высококачественное мясо, богатое белком и минералами. Имеет насыщенный и пикантный вкус, идеально для праздничного стола.",
     category: "Мясные продукты",
     cost: 369,
     src: "https://i.pinimg.com/474x/18/ce/cc/18cecc81bd94c972f66801ffd127bd88.jpg",
@@ -353,7 +392,8 @@ const productsData = [
   {
     id: 40,
     title: "Паштет",
-    description: "Нежный мясной паштет.",
+    description:
+      "Нежный мясной паштет, идеально подходит для бутербродов и закусок. Высококачественное мясо, богатое белком и минералами. Имеет нежный и пикантный вкус, идеально для праздничного стола.",
     category: "Мясные продукты",
     cost: 352,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/d1/ec/b9e0f1b79bcfe302b0aeab19c202.jpg",
@@ -362,7 +402,8 @@ const productsData = [
   {
     id: 41,
     title: "Молоко цельное",
-    description: "Натуральное цельное молоко.",
+    description:
+      "Натуральное цельное молоко, идеально подходит для приготовления различных блюд. Богато белком, витаминами и минералами. Идеально для завтраков, коктейлей и горячих напитков.",
     category: "Молочные продукты",
     cost: 203,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/b2/a6/6550418dc13317f1f86cacbbd81d.jpg",
@@ -371,7 +412,8 @@ const productsData = [
   {
     id: 42,
     title: "Кефир",
-    description: "Свежий кефир.",
+    description:
+      "Свежий кефир, идеально подходит для укрепления иммунитета и улучшения пищеварения. Богат пробиотиками, белком, витаминами и минералами. Идеально для завтраков и перекусов.",
     category: "Молочные продукты",
     cost: 255,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/ac/c0/956d89f7f011259b17537d2c8a4b.jpg",
@@ -380,7 +422,8 @@ const productsData = [
   {
     id: 43,
     title: "Йогурт натуральный",
-    description: "Натуральный йогурт без добавок.",
+    description:
+      "Натуральный йогурт без добавок, идеально подходит для укрепления иммунитета и улучшения пищеварения. Богат пробиотиками, белком, витаминами и минералами. Идеально для завтраков и перекусов.",
     category: "Молочные продукты",
     cost: 264,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/5a/38/f96dfe75ffa58228cd2bf72b05f7.jpg",
@@ -389,7 +432,8 @@ const productsData = [
   {
     id: 44,
     title: "Сметана",
-    description: "Густая сметана.",
+    description:
+      "Густая сметана, идеально подходит для приготовления различных блюд. Богата белком, витаминами и минералами. Идеально для салатов, соусов и гарниров.",
     category: "Молочные продукты",
     cost: 386,
     src: "https://vodovoz.ru/upload/iblock/fde/fde461592cb030f5ba7d82b75790ee91.jpg",
@@ -398,7 +442,8 @@ const productsData = [
   {
     id: 45,
     title: "Творог",
-    description: "Свежий творог.",
+    description:
+      "Свежий творог, идеально подходит для приготовления различных блюд. Богат белком, витаминами и минералами. Идеально для завтраков, десертов и закусок.",
     category: "Молочные продукты",
     cost: 345,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/ce/8c/d4518bb893c1c4d50bed4e16c1de.jpg",
@@ -407,7 +452,8 @@ const productsData = [
   {
     id: 46,
     title: "Сыр твердый",
-    description: "Твердый сыр.",
+    description:
+      "Твердый сыр, идеально подходит для приготовления различных блюд. Богат белком, витаминами и минералами. Идеально для сэндвичей, закусок и гарниров.",
     category: "Молочные продукты",
     cost: 208,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/35/24/863e4db399cac97cb2f077902283.jpg",
@@ -416,7 +462,8 @@ const productsData = [
   {
     id: 47,
     title: "Сыр плавленый",
-    description: "Плавленый сыр.",
+    description:
+      "Плавленый сыр, идеально подходит для приготовления различных блюд. Богат белком, витаминами и минералами. Идеально для сэндвичей, закусок и гарниров.",
     category: "Молочные продукты",
     cost: 142,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/4c/8b/67f14xd4d8927d487218e1a4ebc8.jpg",
@@ -425,7 +472,8 @@ const productsData = [
   {
     id: 48,
     title: "Масло сливочное",
-    description: "Натуральное сливочное масло.",
+    description:
+      "Натуральное сливочное масло, идеально подходит для приготовления различных блюд. Богато жирными кислотами, витаминами и минералами. Идеально для выпечки, жарки и добавления в блюда.",
     category: "Молочные продукты",
     cost: 188,
     src: "https://imgproxy.kuper.ru/imgproxy/size-500-500/czM6Ly9jb250ZW50LWltYWdlcy1wcm9kL3Byb2R1Y3RzLzMzMzAyMTU4L29yaWdpbmFsLzEvMjAyNC0xMS0yOSUyMDE2JTNBNDIlM0E0MS4yMTQxNDglMkIwMCUzQTAwLzMzMzAyMTU4XzEuanBn.jpg",
@@ -434,7 +482,8 @@ const productsData = [
   {
     id: 49,
     title: "Ряженка",
-    description: "Традиционная ряженка.",
+    description:
+      "Традиционная ряженка, идеально подходит для укрепления иммунитета и улучшения пищеварения. Богата пробиотиками, белком, витаминами и минералами. Идеально для завтраков и перекусов.",
     category: "Молочные продукты",
     cost: 161,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/22/1a/772042dc51b83f54c8076b90a992.jpg",
@@ -443,7 +492,8 @@ const productsData = [
   {
     id: 50,
     title: "Простокваша",
-    description: "Домашняя простокваша.",
+    description:
+      "Домашняя простокваша, идеально подходит для укрепления иммунитета и улучшения пищеварения. Богата пробиотиками, белком, витаминами и минералами. Идеально для завтраков и перекусов.",
     category: "Молочные продукты",
     cost: 325,
     src: "https://kizk.ru/upload/iblock/414/41433a27132e388b798461abb6db254c.jpg",
@@ -452,7 +502,8 @@ const productsData = [
   {
     id: 51,
     title: "Сыворотка",
-    description: "Молочная сыворотка.",
+    description:
+      "Молочная сыворотка, идеально подходит для укрепления иммунитета и улучшения пищеварения. Богата пробиотиками, белком, витаминами и минералами. Идеально для завтраков и перекусов.",
     category: "Молочные продукты",
     cost: 372,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/21/ac/xd553d504fe65e23569d1a73be3e.jpg",
@@ -461,7 +512,8 @@ const productsData = [
   {
     id: 52,
     title: "Сливки",
-    description: "Свежие сливки.",
+    description:
+      "Свежие сливки, идеально подходят для приготовления различных блюд. Богаты жирными кислотами, витаминами и минералами. Идеально для соусов, десертов и горячих напитков.",
     category: "Молочные продукты",
     cost: 367,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/6e/a1/66f430885a1e844ab9a3df37aaaa.jpg",
@@ -470,7 +522,8 @@ const productsData = [
   {
     id: 53,
     title: "Мороженое",
-    description: "Сливочное мороженое.",
+    description:
+      "Сливочное мороженое, идеально подходит для утоления жажды и улучшения настроения. Богато жирными кислотами, витаминами и минералами. Идеально для десертов и перекусов.",
     category: "Молочные продукты",
     cost: 217,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/10/6c/cc43c4d26e0cc5d31d28574cb3c0.jpg",
@@ -479,7 +532,8 @@ const productsData = [
   {
     id: 54,
     title: "Сыр моцарелла",
-    description: "Мягкий сыр моцарелла.",
+    description:
+      "Мягкий сыр моцарелла, идеально подходит для приготовления различных блюд. Богат белком, витаминами и минералами. Идеально для пиццы, салатов и гарниров.",
     category: "Молочные продукты",
     cost: 337,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/4a/6d/c657ba9759064c7f252d4ccb437b.jpg",
@@ -488,7 +542,8 @@ const productsData = [
   {
     id: 55,
     title: "Сыр фета",
-    description: "Греческий сыр фета.",
+    description:
+      "Греческий сыр фета, идеально подходит для приготовления салатов и горячих блюд. Богат белком, витаминами и минералами. Имеет соленый и пикантный вкус, идеально для греческого салата и запеканок.",
     category: "Молочные продукты",
     cost: 159,
     src: "https://cdn-img.perekrestok.ru/i/400x400-fit/xdelivery/files/25/a4/9963xd39963aca4896575afee220.jpg",
@@ -497,7 +552,8 @@ const productsData = [
   {
     id: 56,
     title: "Йогурт фруктовый",
-    description: "Фруктовый йогурт.",
+    description:
+      "Фруктовый йогурт, идеально подходит для укрепления иммунитета и улучшения пищеварения. Богат пробиотиками, белком, витаминами и минералами. Имеет сладкий и фруктовый вкус, идеально для завтраков и перекусов.",
     category: "Молочные продукты",
     cost: 246,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/f3/12/9014f8fabcb78bb691e5ea2e9e8b.jpg",
@@ -506,7 +562,8 @@ const productsData = [
   {
     id: 57,
     title: "Сыр пармезан",
-    description: "Итальянский сыр пармезан.",
+    description:
+      "Итальянский сыр пармезан, идеально подходит для приготовления различных блюд. Богат белком, витаминами и минералами. Имеет насыщенный и пикантный вкус, идеально для пасты, салатов и закусок.",
     category: "Молочные продукты",
     cost: 227,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/5b/de/c511e872ae4181bc3afb93420215.jpg",
@@ -515,7 +572,8 @@ const productsData = [
   {
     id: 58,
     title: "Сыр гауда",
-    description: "Голландский сыр гауда.",
+    description:
+      "Голландский сыр гауда, идеально подходит для приготовления различных блюд. Богат белком, витаминами и минералами. Имеет сладковатый и пикантный вкус, идеально для сэндвичей, закусок и гарниров.",
     category: "Молочные продукты",
     cost: 378,
     src: "https://imgproxy.kuper.ru/imgproxy/size-500-500/czM6Ly9jb250ZW50LWltYWdlcy1wcm9kL3Byb2R1Y3RzLzIyNTEwNjgwL29yaWdpbmFsLzEvMjAyMy0wMS0zMVQxMSUzQTE5JTNBNTUuOTk0MDAwJTJCMDAlM0EwMC8yMjUxMDY4MF8xLmpwZw==.jpg",
@@ -524,7 +582,8 @@ const productsData = [
   {
     id: 59,
     title: "Сыр маасдам",
-    description: "Сыр маасдам с большими дырками.",
+    description:
+      "Сыр маасдам с большими дырками, идеально подходит для приготовления различных блюд. Богат белком, витаминами и минералами. Имеет сладковатый и пикантный вкус, идеально для сэндвичей, закусок и гарниров.",
     category: "Молочные продукты",
     cost: 369,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/e2/fe/9bbd2122c2a7d4dcb9ed336ea14c.jpg",
@@ -533,7 +592,8 @@ const productsData = [
   {
     id: 60,
     title: "Сыр бри",
-    description: "Мягкий сыр бри с белой плесенью.",
+    description:
+      "Мягкий сыр бри с белой плесенью, идеально подходит для приготовления различных блюд. Богат белком, витаминами и минералами. Имеет нежный и пикантный вкус, идеально для закусок и аперитивов.",
     category: "Молочные продукты",
     cost: 275,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/3b/bc/9703c989d24a0fab56fb7c67a02f.jpg",
@@ -542,7 +602,8 @@ const productsData = [
   {
     id: 61,
     title: "Картофель",
-    description: "Свежий картофель.",
+    description:
+      "Свежий картофель, идеально подходит для приготовления различных блюд. Богат крахмалом, витаминами и минералами. Идеально для гарниров, супов и запеканок.",
     category: "Овощи",
     cost: 351,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/5b/86/51d261ac056a5810d470907d606c.jpg",
@@ -551,7 +612,8 @@ const productsData = [
   {
     id: 62,
     title: "Морковь",
-    description: "Сочная морковь.",
+    description:
+      "Сочная морковь, идеально подходит для приготовления различных блюд. Богата бета-каротином, витаминами и минералами. Идеально для салатов, супов и гарниров.",
     category: "Овощи",
     cost: 250,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/bd/63/8806b5fb34a034f65dd9xd8fed57.jpg",
@@ -560,7 +622,8 @@ const productsData = [
   {
     id: 63,
     title: "Лук репчатый",
-    description: "Репчатый лук.",
+    description:
+      "Репчатый лук, идеально подходит для приготовления различных блюд. Богат витаминами и минералами. Идеально для салатов, супов и гарниров, придает блюдам пикантный вкус.",
     category: "Овощи",
     cost: 200,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/11/9e/83de3c53cd934a0a711390c991e9.jpg",
@@ -569,7 +632,8 @@ const productsData = [
   {
     id: 64,
     title: "Капуста белокочанная",
-    description: "Белокочанная капуста.",
+    description:
+      "Белокочанная капуста, идеально подходит для приготовления различных блюд. Богата витаминами и минералами. Идеально для салатов, супов и гарниров, придает блюдам свежесть и хруст.",
     category: "Овощи",
     cost: 317,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/cd/13/ea46aaa2125ac43987b8d12f1ecd.jpg",
@@ -578,7 +642,8 @@ const productsData = [
   {
     id: 65,
     title: "Помидоры",
-    description: "Спелые помидоры.",
+    description:
+      "Спелые помидоры, идеально подходят для приготовления различных блюд. Богаты ликопином, витаминами и минералами. Идеально для салатов, супов и соусов, придают блюдам насыщенный вкус и цвет.",
     category: "Овощи",
     cost: 211,
     src: "https://ogorod-foodmarket.ru/image/cache/catalog/ovoschi-frukty-zelen/ovoschi/8/633649676-pomidory-slivovidnye-1-kg-650x650.jpg",
@@ -587,7 +652,8 @@ const productsData = [
   {
     id: 66,
     title: "Огурцы",
-    description: "Свежие огурцы.",
+    description:
+      "Свежие огурцы, идеально подаются для приготовления различных блюд. Богаты витаминами и минералами. Идеально для салатов, супов и закусок, придают блюдам свежесть и хруст.",
     category: "Овощи",
     cost: 231,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/c1/4e/c1293a98c533342638ff64eec5ae.jpg",
@@ -596,7 +662,8 @@ const productsData = [
   {
     id: 67,
     title: "Перец болгарский",
-    description: "Болгарский перец.",
+    description:
+      "Болгарский перец, идеально подходит для приготовления различных блюд. Богат витаминами и минералами. Идеально для салатов, супов и гарниров, придает блюдам насыщенный вкус и цвет.",
     category: "Овощи",
     cost: 152,
     src: "https://dubki-dostavka.ru/d/bolgarskij_perec.jpg",
@@ -605,7 +672,8 @@ const productsData = [
   {
     id: 68,
     title: "Свекла",
-    description: "Красная свекла.",
+    description:
+      "Красная свекла, идеально подходит для приготовления различных блюд. Богата витаминами и минералами. Идеально для салатов, супов и гарниров, придает блюдам насыщенный вкус и цвет.",
     category: "Овощи",
     cost: 182,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/d0/96/16e251b14c718776971d6198ea29.jpg",
@@ -614,7 +682,8 @@ const productsData = [
   {
     id: 69,
     title: "Баклажаны",
-    description: "Свежие баклажаны.",
+    description:
+      "Свежие баклажаны, идеально подходят для приготовления различных блюд. Богаты витаминами и минералами. Идеально для салатов, супов и гарниров, придают блюдам насыщенный вкус и текстуру.",
     category: "Овощи",
     cost: 164,
     src: "https://goldniva.ru/upload/iblock/063/06345ce747a58b7a9525c8de1c3a0ced.jpg",
@@ -623,7 +692,8 @@ const productsData = [
   {
     id: 70,
     title: "Кабачки",
-    description: "Молодые кабачки.",
+    description:
+      "Молодые кабачки, идеально подходят для приготовления различных блюд. Богаты витаминами и минералами. Идеально для салатов, супов и гарниров, придают блюдам легкость и свежесть.",
     category: "Овощи",
     cost: 348,
     src: "https://fruitsparadise.ru/wp-content/uploads/2019/01/Untitled-4546545.jpg",
@@ -632,7 +702,8 @@ const productsData = [
   {
     id: 71,
     title: "Чеснок",
-    description: "Ароматный чеснок.",
+    description:
+      "Ароматный чеснок, идеально подходит для приготовления различных блюд. Богат витаминами и минералами. Идеально для салатов, супов и гарниров, придает блюдам пикантный вкус.",
     category: "Овощи",
     cost: 240,
     src: "https://foodcity.ru/storage/products/October2018/LzLBZQ4YffuH30dKX7OL.jpg",
@@ -641,7 +712,8 @@ const productsData = [
   {
     id: 72,
     title: "Зеленый лук",
-    description: "Свежий зеленый лук.",
+    description:
+      "Свежий зеленый лук, идеально подходит для приготовления различных блюд. Богат витаминами и минералами. Идеально для салатов, супов и гарниров, придает блюдам свежесть и аромат.",
     category: "Овощи",
     cost: 393,
     src: "https://alhabounygroup.com/wp-content/uploads/2023/05/e4481a544397923df4925570708e4fa5.jpg",
@@ -650,7 +722,8 @@ const productsData = [
   {
     id: 73,
     title: "Укроп",
-    description: "Свежий укроп.",
+    description:
+      "Свежий укроп, идеально подходит для приготовления различных блюд. Богат витаминами и минералами. Идеально для салатов, супов и гарниров, придает блюдам свежесть и аромат.",
     category: "Овощи",
     cost: 306,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/f0/d3/10f91c162fd0abae66e83a032f72.jpg",
@@ -659,7 +732,8 @@ const productsData = [
   {
     id: 74,
     title: "Петрушка",
-    description: "Свежая петрушка.",
+    description:
+      "Свежая петрушка, идеально подходит для приготовления различных блюд. Богата витаминами и минералами. Идеально для салатов, супов и гарниров, придает блюдам свежесть и аромат.",
     category: "Овощи",
     cost: 250,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/7f/5c/2dfa46a0a24c770612cee0b29814.jpg",
@@ -668,7 +742,8 @@ const productsData = [
   {
     id: 75,
     title: "Салат",
-    description: "Свежий салат.",
+    description:
+      "Свежий салат, идеально подходит для приготовления различных блюд. Богат витаминами и минералами. Идеально для салатов, закусок и гарниров, придает блюдам свежесть и хруст.",
     category: "Овощи",
     cost: 388,
     src: "https://images.mrcook.app/recipe-image/01902c6b-48ba-710e-8818-e7241fd757aa",
@@ -677,7 +752,8 @@ const productsData = [
   {
     id: 76,
     title: "Редис",
-    description: "Свежий редис.",
+    description:
+      "Свежий редис, идеально подходит для приготовления различных блюд. Богат витаминами и минералами. Идеально для салатов, закусок и гарниров, придает блюдам свежесть и хруст.",
     category: "Овощи",
     cost: 246,
     src: "https://shop.samberi.com/upload/iblock/921/92152c940e2fcfa6a3c0b93fb4ba9f2a.jpg",
@@ -686,7 +762,8 @@ const productsData = [
   {
     id: 77,
     title: "Морковь молодая",
-    description: "Молодая морковь.",
+    description:
+      "Молодая морковь, идеально подходит для приготовления различных блюд. Богата бета-каротином, витаминами и минералами. Идеально для салатов, супов и гарниров, придает блюдам свежесть и хруст.",
     category: "Овощи",
     cost: 327,
     src: "https://main-cdn.sbermegamarket.ru/big1/hlr-system/965/097/046/971/455/100039286443b0.jpg",
@@ -695,7 +772,8 @@ const productsData = [
   {
     id: 78,
     title: "Цветная капуста",
-    description: "Цветная капуста.",
+    description:
+      "Цветная капуста, идеально подходит для приготовления различных блюд. Богата витаминами и минералами. Идеально для салатов, супов и гарниров, придает блюдам свежесть и хруст.",
     category: "Овощи",
     cost: 240,
     src: "https://semenavlg.ru/image/cache/catalog/kapustacvetnaya/cvetnaya-400x400.webp",
@@ -704,7 +782,8 @@ const productsData = [
   {
     id: 79,
     title: "Брокколи",
-    description: "Брокколи.",
+    description:
+      "Брокколи, идеально подходит для приготовления различных блюд. Богата витаминами и минералами. Идеально для салатов, супов и гарниров, придает блюдам свежесть и хруст.",
     category: "Овощи",
     cost: 149,
     src: "https://foodcity.ru/storage/products/October2018/DIY3miPKxGeXvLOAYl27.jpg",
@@ -713,7 +792,8 @@ const productsData = [
   {
     id: 80,
     title: "Шпинат",
-    description: "Свежий шпинат.",
+    description:
+      "Свежий шпинат, идеально подходит для приготовления различных блюд. Богат витаминами и минералами. Идеально для салатов, супов и гарниров, придает блюдам свежесть и аромат.",
     category: "Овощи",
     cost: 118,
     src: "https://gavrishprof.ru/sites/default/files/images/pub/gavrishprof_shpinat_2.jpg",
@@ -722,7 +802,8 @@ const productsData = [
   {
     id: 81,
     title: "Яблоки",
-    description: "Свежие яблоки.",
+    description:
+      "Свежие яблоки, идеально подходят для утоления жажды и улучшения пищеварения. Богаты витаминами и минералами. Идеально для десертов, салатов и перекусов, придают блюдам свежесть и сладость.",
     category: "Фрукты",
     cost: 392,
     src: "https://foodcity.ru/storage/products/October2018/ZsF1ZRaz0BMtW5ieBq5d.jpg",
@@ -731,7 +812,8 @@ const productsData = [
   {
     id: 82,
     title: "Груши",
-    description: "Сочные груши.",
+    description:
+      "Сочные груши, идеально подходят для утоления жажды и улучшения пищеварения. Богаты витаминами и минералами. Идеально для десертов, салатов и перекусов, придают блюдам сладость и аромат.",
     category: "Фрукты",
     cost: 386,
     src: "https://fruit-time.ua/images/cache/products/55/grusa-ukrayina-500x500.jpeg",
@@ -740,7 +822,8 @@ const productsData = [
   {
     id: 83,
     title: "Бананы",
-    description: "Спелые бананы.",
+    description:
+      "Спелые бананы, идеально подходят для утоления жажды и улучшения пищеварения. Богаты витаминами и минералами. Идеально для десертов, салатов и перекусов, придают блюдам сладость и аромат.",
     category: "Фрукты",
     cost: 122,
     src: "https://megatitan.ru/upload/iblock/705/h5dgpc2btvpgjog0p7vr85pkxpzfrip3.jpg",
@@ -749,7 +832,8 @@ const productsData = [
   {
     id: 84,
     title: "Апельсины",
-    description: "Сочные апельсины.",
+    description:
+      "Сочные апельсины, идеально подходят для утоления жажды и улучшения пищеварения. Богаты витаминами и минералами. Идеально для десертов, салатов и перекусов, придают блюдам свежесть и кислинку.",
     category: "Фрукты",
     cost: 118,
     src: "https://goldniva.ru/upload/iblock/055/055797b3a10942eac678fd65222a9a36.png",
@@ -758,7 +842,8 @@ const productsData = [
   {
     id: 85,
     title: "Мандарины",
-    description: "Сладкие мандарины.",
+    description:
+      "Сладкие мандарины, идеально подходят для утоления жажды и улучшения пищеварения. Богаты витаминами и минералами. Идеально для десертов, салатов и перекусов, придают блюдам сладость и аромат.",
     category: "Фрукты",
     cost: 175,
     src: "https://fruitsparadise.ru/wp-content/uploads/2019/09/%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D0%B8%D0%BD%D1%8B-%D0%BA%D0%B8%D1%82%D0%B0%D0%B9..jpg",
@@ -767,7 +852,8 @@ const productsData = [
   {
     id: 86,
     title: "Лимоны",
-    description: "Кислые лимоны.",
+    description:
+      "Кислые лимоны, идеально подходят для утоления жажды и улучшения пищеварения. Богаты витаминами и минералами. Идеально для десертов, салатов и напитков, придают блюдам свежесть и кислинку.",
     category: "Фрукты",
     cost: 133,
     src: "https://cdn-img.perekrestok.ru/i/400x400-fit/xdelivery/files/96/0c/d28431767c72bbec3191e99e56fb.jpg",
@@ -776,7 +862,8 @@ const productsData = [
   {
     id: 87,
     title: "Виноград",
-    description: "Спелый виноград.",
+    description:
+      "Спелый виноград, идеально подходит для утоления жажды и улучшения пищеварения. Богат витаминами и минералами. Идеально для десертов, салатов и перекусов, придают блюдам сладость и аромат.",
     category: "Фрукты",
     cost: 336,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/92/99/945be29e6a03fab6c456fae5bb57.jpg",
@@ -785,7 +872,8 @@ const productsData = [
   {
     id: 88,
     title: "Персики",
-    description: "Сладкие персики.",
+    description:
+      "Сладкие персики, идеально подходят для утоления жажды и улучшения пищеварения. Богаты витаминами и минералами. Идеально для десертов, салатов и перекусов, придают блюдам сладость и аромат.",
     category: "Фрукты",
     cost: 140,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/09/4b/4e35b4bf46d63f654c75e6df58ef.jpg",
@@ -794,7 +882,8 @@ const productsData = [
   {
     id: 89,
     title: "Абрикосы",
-    description: "Спелые абрикосы.",
+    description:
+      "Спелые абрикосы, идеально подходят для утоления жажды и улучшения пищеварения. Богаты витаминами и минералами. Идеально для десертов, салатов и перекусов, придают блюдам сладость и аромат.",
     category: "Фрукты",
     cost: 114,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/10/4d/f372287095e9436dc2c5a11fb158.jpg",
@@ -803,7 +892,8 @@ const productsData = [
   {
     id: 90,
     title: "Сливы",
-    description: "Спелые сливы.",
+    description:
+      "Спелые сливы, идеально подходят для утоления жажды и улучшения пищеварения. Богаты витаминами и минералами. Идеально для десертов, салатов и перекусов, придают блюдам сладость и аромат.",
     category: "Фрукты",
     cost: 112,
     src: "https://greenshop.com.ua/image/cache/catalog/dopphoto/sliva-500x500.jpg",
@@ -812,7 +902,8 @@ const productsData = [
   {
     id: 91,
     title: "Арбуз",
-    description: "Сочный арбуз.",
+    description:
+      "Сочный арбуз, идеально подходит для утоления жажды и улучшения пищеварения. Богат витаминами и минералами. Идеально для десертов и перекусов, придает блюдам свежесть и сладость.",
     category: "Фрукты",
     cost: 154,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/db/06/e3025454cbdcfxde7ded4d82cd69.jpg",
@@ -821,7 +912,8 @@ const productsData = [
   {
     id: 92,
     title: "Дыня",
-    description: "Сладкая дыня.",
+    description:
+      "Сладкая дыня, идеально подходит для утоления жажды и улучшения пищеварения. Богата витаминами и минералами. Идеально для десертов и перекусов, придает блюдам сладость и аромат.",
     category: "Фрукты",
     cost: 168,
     src: "https://foodcity.ru/storage/products/October2018/MyLbo281EoxQUmi2P7T0.jpg",
@@ -830,7 +922,8 @@ const productsData = [
   {
     id: 93,
     title: "Ананас",
-    description: "Спелый ананас.",
+    description:
+      "Спелый ананас, идеально подходит для утоления жажды и улучшения пищеварения. Богат витаминами и минералами. Идеально для десертов, салатов и перекусов, придает блюдам сладость и экзотический аромат.",
     category: "Фрукты",
     cost: 146,
     src: "https://cdn-img.perekrestok.ru/i/400x400-fit/xdelivery/files/86/34/dae91c7bdea18de74791b91a5f31.jpg",
@@ -839,7 +932,8 @@ const productsData = [
   {
     id: 94,
     title: "Киви",
-    description: "Киви.",
+    description:
+      "Спелый киви, идеально подходит для утоления жажды и улучшения пищеварения. Богат витаминами и минералами. Идеально для десертов, салатов и перекусов, придает блюдам сладость и свежесть.",
     category: "Фрукты",
     cost: 377,
     src: "https://kamchatka.pro/images/thumbnails/430/430/detailed/6/kivi-svezhee-1-shtuka-50-rubley-5331-kivi-svezhee-1-shtukapredlozhenie-s-besplatnoy-dostavkoy-na-dom-po-gorodu-petropavlovsku-kamchatskomu-ot-kamchatka-pro.webp",
@@ -848,7 +942,8 @@ const productsData = [
   {
     id: 95,
     title: "Манго",
-    description: "Спелое манго.",
+    description:
+      "Спелое манго, идеально подходит для утоления жажды и улучшения пищеварения. Богат витаминами и минералами. Идеально для десертов, салатов и перекусов, придает блюдам сладость и экзотический аромат.",
     category: "Фрукты",
     cost: 348,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/6d/65/aaa719xd43c4067ba486460ab1ef.jpg",
@@ -857,7 +952,8 @@ const productsData = [
   {
     id: 96,
     title: "Гранат",
-    description: "Спелый гранат.",
+    description:
+      "Спелый гранат, идеально подходит для утоления жажды и улучшения пищеварения. Богат витаминами и минералами. Идеально для десертов, салатов и перекусов, придает блюдам сладость и насыщенный вкус.",
     category: "Фрукты",
     cost: 183,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/06/79/6c43e15e34d81554e701080fb942.jpg",
@@ -866,7 +962,8 @@ const productsData = [
   {
     id: 97,
     title: "Хурма",
-    description: "Сладкая хурма.",
+    description:
+      "Сладкая хурма, идеально подходит для утоления жажды и улучшения пищеварения. Богата витаминами и минералами. Идеально для десертов, салатов и перекусов, придает блюдам сладость и аромат.",
     category: "Фрукты",
     cost: 346,
     src: "https://ogorod-foodmarket.ru/image/cache/catalog/easyphoto/8279/hurma-1-kg-1-650x650.jpg",
@@ -875,7 +972,8 @@ const productsData = [
   {
     id: 98,
     title: "Авокадо",
-    description: "Спелый авокадо.",
+    description:
+      "Спелый авокадо, идеально подходит для утоления жажды и улучшения пищеварения. Богат витаминами, минералами и ненасыщенными жирами. Идеально для десертов, салатов и перекусов, придает блюдам кремовую текстуру и насыщенный вкус.",
     category: "Фрукты",
     cost: 390,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/eb/24/ac3c2325db3bf3134fa9187b7a1d.jpg",
@@ -884,7 +982,8 @@ const productsData = [
   {
     id: 99,
     title: "Нектарин",
-    description: "Спелый нектарин.",
+    description:
+      "Спелый нектарин, идеально подходит для утоления жажды и улучшения пищеварения. Богат витаминами и минералами. Идеально для десертов, салатов и перекусов, придает блюдам сладость и аромат.",
     category: "Фрукты",
     cost: 205,
     src: "https://fruitsparadise.ru/wp-content/uploads/2019/01/%D0%BD%D0%B5%D0%BA%D1%82%D0%B0%D1%80%D0%B8%D0%BD%D1%8B.jpg",
@@ -893,7 +992,8 @@ const productsData = [
   {
     id: 100,
     title: "Вишня",
-    description: "Спелая вишня.",
+    description:
+      "Спелая вишня, идеально подходит для утоления жажды и улучшения пищеварения. Богата витаминами и минералами. Идеально для десертов, салатов и перекусов, придает блюдам сладость и аромат.",
     category: "Фрукты",
     cost: 230,
     src: "https://cdn-img.perekrestok.ru/i/800x800-fit/xdelivery/files/04/a0/ea08bbc66871540fc4d000022a98.jpg",

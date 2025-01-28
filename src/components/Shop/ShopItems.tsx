@@ -18,6 +18,8 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import ShopFilter from "@/components/Shop/ShopFilter";
+import Link from "next/link";
+import useCartStore from "@/providers/ZustandContext";
 
 type Product = {
   id: number;
@@ -38,6 +40,7 @@ export function ShopItems() {
     price: "",
     alphabet: "",
   });
+  const { addToCart } = useCartStore();
 
   // Функция для обработки изменения фильтров
   const handleFilterChange = (newFilter: typeof filter) => {
@@ -106,7 +109,7 @@ export function ShopItems() {
 
   return (
     <div className="flex flex-col justify-center">
-      <div className="flex justify-start">
+      <div className="flex justify-start ml-32">
         <ShopFilter
           filter={filter}
           onFilterChange={handleFilterChange}
@@ -120,13 +123,15 @@ export function ShopItems() {
             className="flex flex-col justify-between items-center shadow-lg m-2 w-[240px] h-[380px]"
           >
             <CardHeader>
-              <img
-                className="rounded-lg"
-                src={product.src}
-                alt={product.alt}
-                width={150}
-                height={150}
-              />
+              <Link href={`/product/${product.id}`}>
+                <img
+                  className="rounded-lg"
+                  src={product.src}
+                  alt={product.alt}
+                  width={150}
+                  height={150}
+                />
+              </Link>
             </CardHeader>
 
             <CardContent className="flex justify-center items-center p-4 pt-0 text-center">
@@ -135,12 +140,17 @@ export function ShopItems() {
 
             <CardFooter className="flex flex-col justify-center items-center">
               <CardTitle className="pb-2">{`${product.cost} ₽`}</CardTitle>
-              <Button className="w-24 h-11 text-lg">Купить</Button>
+              <Button
+                onClick={() => addToCart(product)}
+                className="w-24 h-11 text-lg"
+              >
+                Купить
+              </Button>
             </CardFooter>
           </Card>
         ))}
       </div>
-      <div className="flex justify-center mb-8">
+      <div className="flex justify-center">
         <Pagination>
           <PaginationContent>
             <PaginationPrevious
