@@ -47,25 +47,28 @@ export default function ProductPage() {
         <img src={product.src} alt={product.title} className="shadow-lg mt-2" />
       </div>
       <div className="flex flex-col w-[40%]">
-        <div>
-          <h1 className="text-4xl">{product.title}</h1>
-          <p className="py-2 text-sm">{product.description}</p>
+        <div className="mb-4">
+          <h1 className="text-5xl">{product.title}</h1>
+          <h1 className="mt-2 text-xl">{`Категория: ${product.category}`}</h1>
+          <p className="py-2 text-xl">{product.description}</p>
         </div>
         <div>
           <h1 className="p-2 border border-t-black/10 border-r-0 border-b-black/10 border-l-0 text-4xl">
-            ₽{product.cost}.00
+            {product.cost}.00 ₽
           </h1>
         </div>
         <div className="flex flex-row">
           <Button
             onClick={() => handleAddToCart(product)}
-            className="w-24 h-11 text-lg"
+            className="m-4 text-lg"
+            size={"lg"}
           >
             Купить
           </Button>
           <Button
             onClick={() => handleclick(product)}
-            className="w-24 h-11 text-lg"
+            className="m-4 text-lg"
+            size={"lg"}
           >
             В корзину
           </Button>
@@ -82,11 +85,9 @@ export default function ProductPage() {
             {active ? "Добавить" : "В корзине"}
           </button> */}
         </div>
-        <div className="shadow-lg p-4 border border-black/15 rounded-lg">
-          <h3 className="pb-2 border-b-2">Бесплатная доставка</h3>
-          <h3>
-            Политика возврата: <br />{" "}
-            <span>Возврат в течении 30 дней - бесплатно</span>
+        <div className="flex justify-center items-center shadow-lg p-4 border rounded-lg">
+          <h3 className="text-xl">
+            Бесплатная доставка при заказе на сумму от 500 рублей.
           </h3>
         </div>
       </div>

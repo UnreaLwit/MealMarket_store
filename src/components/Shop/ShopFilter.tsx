@@ -11,7 +11,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Check, ChevronsUpDown } from "lucide-react";
+import { Check, ChevronsDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import productsData from "@/data/productsData";
@@ -129,7 +129,7 @@ const ShopFilter: React.FC<ShopFilterProps> = ({
             className="justify-between shadow-lg mr-4 w-auto"
           >
             {filter.category ? filter.category : "Категория"}
-            <ChevronsUpDown className="opacity-50" />
+            <ChevronsDown className="opacity-50" />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="p-0 w-[200px]">
@@ -163,7 +163,7 @@ const ShopFilter: React.FC<ShopFilterProps> = ({
               : filter.price === "highToLow"
               ? "От высокой к низкой"
               : "Цена"}
-            <ChevronsUpDown className="opacity-50" />
+            <ChevronsDown className="opacity-50" />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="p-0 w-[200px]">
@@ -195,7 +195,7 @@ const ShopFilter: React.FC<ShopFilterProps> = ({
               : filter.alphabet === "zToa"
               ? "От Я до А"
               : "Алфавит"}
-            <ChevronsUpDown className="opacity-50" />
+            <ChevronsDown className="opacity-50" />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="p-0 w-[200px]">
