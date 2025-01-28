@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
@@ -10,7 +11,7 @@ const HomeBanner = () => {
           Мы доставим магазин к вашему дому
         </h1>
         <h2 className="mb-4 font-semibold text-xl">
-          При заказе от 1000 рублей доставка бесплатно
+          При заказе от 1000 рублей доставка бесплатно
         </h2>
         <Link href="/shop">
           <Button
@@ -21,13 +22,15 @@ const HomeBanner = () => {
           </Button>
         </Link>
       </div>
-      <img
-        className="ml-8 object-contain"
-        src="https://png.pngtree.com/png-vector/20240810/ourmid/pngtree-shopping-cart-full-of-groceries-on-white-backgrou-png-image_13423943.png"
-        alt="корзина"
-        width={300}
-        height={300}
-      />
+      <div className="ml-8 w-[60%]">
+        <img
+          src="https://png.pngtree.com/png-vector/20240810/ourmid/pngtree-shopping-cart-full-of-groceries-on-white-backgrou-png-image_13423943.png"
+          alt="корзина"
+          width={300}
+          height={300}
+          className="object-contain"
+        />
+      </div>
     </div>
   );
 };

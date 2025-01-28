@@ -8,10 +8,10 @@ import { FaArrowRight } from "react-icons/fa";
 
 export default function HomePage() {
   return (
-    <div>
+    <>
       <HomeBanner />
       <HomeCategory />
-      <div className="flex justify-end items-center mb-8 center">
+      <div className="flex justify-end items-center mb-8">
         <h1 className="mr-72 text-4xl">Популярные товары</h1>
         <Link className="flex items-center text-xl" href="/shop">
           Больше товаров
@@ -24,6 +24,6 @@ export default function HomePage() {
       </div>
       <HomeStores />
       <HomeAppBanner />
-    </div>
+    </>
   );
 }
