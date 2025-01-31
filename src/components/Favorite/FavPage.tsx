@@ -15,7 +15,7 @@ const FavPage = () => {
           <div className="flex flex-col">
             <h1 className="mb-8 text-4xl">Избранное</h1>
 
-            <div className="flex">
+            <div className="flex flex-wrap justify-center">
               {favorites.map((product) => (
                 <div key={product.id}>
                   <CardItem product={product} />

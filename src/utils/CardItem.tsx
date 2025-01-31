@@ -55,19 +55,15 @@ const CardItem = ({ product }: { product: Product }) => {
         </CardHeader>
         {status === "authenticated" ? (
           <Toggle
-            className="top-2 right-1 absolute"
+            className="top-4 right-0 absolute"
             aria-label="Toggle bold"
             onClick={() => handleFavorite(product)}
           >
-            {isFavorite(product.id) ? (
-              <AiFillHeart className="text-red-500" />
-            ) : (
-              <AiOutlineHeart className="text-red-500" />
-            )}
+            {isFavorite(product.id) ? <AiFillHeart /> : <AiOutlineHeart />}
           </Toggle>
         ) : null}
 
-        <CardContent className="flex justify-center items-start p-4 pb-0 h-[100%] text-center">
+        <CardContent className="flex flex-1 justify-center items-start p-4 h-[100%] text-center">
           <CardTitle>{product.title}</CardTitle>
         </CardContent>
 
