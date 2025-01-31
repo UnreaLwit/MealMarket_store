@@ -1,5 +1,4 @@
 "use client";
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,7 +10,13 @@ import {
 import productsData from "@/data/productsData";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import useCartStore from "@/providers/ZustandContext";
+import useCartStore from "@/providers/cartStore";
+import useFavoritesStore from "@/providers/favoritesStore";
+import { Toggle } from "../ui/toggle";
+
+import { AiFillHeart } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
+import CardItem from "../../utils/CardItem";
 
 type CardProps = React.ComponentProps<typeof Card>;
 type Product = {
@@ -24,9 +29,11 @@ type Product = {
   alt: string;
 };
 
-export function HomeCards({ className, ...props }: CardProps) {
+export function HomeCards() {
   const [randomProducts, setRandomProducts] = useState<Product[]>([]);
   const { addToCart } = useCartStore();
+  const { favorites, addToFavorites, removeFromFavorites, isFavorite } =
+    useFavoritesStore();
 
   useEffect(() => {
     const shuffledProducts = [...productsData];
@@ -39,46 +46,23 @@ export function HomeCards({ className, ...props }: CardProps) {
     setRandomProducts(randomProducts);
   }, []);
 
-  const renderProductCard = (product: Product) => (
-    <Card
-      key={product.id}
-      className={cn(
-        "w-[240px] h-[380px] flex flex-col justify-between items-center m-2 shadow-lg",
-        className
-      )}
-      {...props}
-    >
-      <CardHeader>
-        <Link href={`/product/${product.id}`}>
-          <img
-            className="rounded-lg"
-            src={product.src}
-            alt={product.alt}
-            width={150}
-            height={150}
-          />
-        </Link>
-      </CardHeader>
-
-      <CardContent className="flex justify-center items-center p-4 pt-0 text-center">
-        <CardTitle>{product.title}</CardTitle>
-      </CardContent>
-
-      <CardFooter className="flex flex-col justify-center items-center">
-        <CardTitle className="pb-2">{`${product.cost} ₽`}</CardTitle>
-        <Button
-          onClick={() => addToCart(product)}
-          className="w-24 h-11 text-lg"
-        >
-          Купить
-        </Button>
-      </CardFooter>
-    </Card>
-  );
+  const handleFavorite = (product: Product) => {
+    if (isFavorite(product.id)) {
+      removeFromFavorites(product.id);
+    } else {
+      addToFavorites(product);
+    }
+  };
 
   return (
     <div className="flex flex-wrap justify-center mb-8">
-      {randomProducts.map(renderProductCard)}
+      {randomProducts.map((product: Product) => {
+        return (
+          <div key={product.id}>
+            <CardItem product={product} />
+          </div>
+        );
+      })}
     </div>
   );
 }

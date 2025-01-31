@@ -19,7 +19,12 @@ import {
 } from "@/components/ui/pagination";
 import ShopFilter from "@/components/Shop/ShopFilter";
 import Link from "next/link";
-import useCartStore from "@/providers/ZustandContext";
+import useCartStore from "@/providers/cartStore";
+import { cn } from "@/lib/utils";
+import { Toggle } from "../ui/toggle";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import useFavoritesStore from "@/providers/favoritesStore";
+import CardItem from "../../utils/CardItem";
 
 type Product = {
   id: number;
@@ -41,6 +46,8 @@ export function ShopItems() {
     alphabet: "",
   });
   const { addToCart } = useCartStore();
+  const { favorites, addToFavorites, removeFromFavorites, isFavorite } =
+    useFavoritesStore();
 
   // Функция для обработки изменения фильтров
   const handleFilterChange = (newFilter: typeof filter) => {
@@ -107,9 +114,17 @@ export function ShopItems() {
     setFilter({ category: "", price: "", alphabet: "" });
   };
 
+  const handleFavorite = (product: Product) => {
+    if (isFavorite(product.id)) {
+      removeFromFavorites(product.id);
+    } else {
+      addToFavorites(product);
+    }
+  };
+
   return (
     <div className="flex flex-col justify-center">
-      <div className="flex justify-start ml-32">
+      <div className="flex justify-start ml-36">
         <ShopFilter
           filter={filter}
           onFilterChange={handleFilterChange}
@@ -118,36 +133,9 @@ export function ShopItems() {
       </div>
       <div className="flex flex-wrap justify-center mb-8">
         {currentProducts.map((product) => (
-          <Card
-            key={product.id}
-            className="flex flex-col justify-between items-center shadow-lg m-2 w-[240px] h-[380px]"
-          >
-            <CardHeader>
-              <Link href={`/product/${product.id}`}>
-                <img
-                  className="rounded-lg"
-                  src={product.src}
-                  alt={product.alt}
-                  width={150}
-                  height={150}
-                />
-              </Link>
-            </CardHeader>
-
-            <CardContent className="flex justify-center items-center p-4 pt-0 text-center">
-              <CardTitle>{product.title}</CardTitle>
-            </CardContent>
-
-            <CardFooter className="flex flex-col justify-center items-center">
-              <CardTitle className="pb-2">{`${product.cost} ₽`}</CardTitle>
-              <Button
-                onClick={() => addToCart(product)}
-                className="w-24 h-11 text-lg"
-              >
-                Купить
-              </Button>
-            </CardFooter>
-          </Card>
+          <div key={product.id}>
+            <CardItem product={product} />
+          </div>
         ))}
       </div>
       <div className="flex justify-center">

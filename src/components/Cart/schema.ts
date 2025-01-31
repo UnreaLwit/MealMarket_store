@@ -1,9 +1,14 @@
-// utils/schema.ts
 import * as z from "zod";
 
 export const formSchema = z.object({
   name: z.string().min(1, { message: "Имя обязательно" }),
   email: z.string().email({ message: "Неверный формат email" }),
+  phone: z
+    .string()
+    .min(17, { message: "Телефон должен быть в формате +7 (999) 999-99-99" })
+    .regex(/^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/, {
+      message: "Телефон должен быть в формате +7 (999) 999-99-99",
+    }),
   cardNumber: z
     .string()
     .min(13, { message: "Номер карты должен быть не менее 13 символов" })

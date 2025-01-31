@@ -21,6 +21,7 @@ const CartForm: React.FC = () => {
     defaultValues: {
       name: "",
       email: "",
+      phone: "",
       cardNumber: "",
       expiryDate: "",
       cvv: "",
@@ -55,6 +56,21 @@ const CartForm: React.FC = () => {
           render={({ field, fieldState }) => (
             <FormItem>
               <FormLabel className="text-lg">Email</FormLabel>
+              <FormControl>
+                <Input {...field} />
+              </FormControl>
+              {fieldState.isTouched && (
+                <FormMessage>{fieldState.error?.message}</FormMessage>
+              )}
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="phone"
+          render={({ field, fieldState }) => (
+            <FormItem>
+              <FormLabel className="text-lg">Phone</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>

@@ -1,40 +1,16 @@
 "use client";
-import useCartStore from "@/providers/ZustandContext";
+import useCartStore from "@/providers/cartStore";
 import { Button } from "@/components/ui/button";
 import productsData from "@/data/productsData";
 import { redirect, useParams } from "next/navigation";
-import { useState } from "react";
+import Counter from "@/utils/Counter";
 
 export default function ProductPage() {
   const params = useParams();
   const { id } = params as { id: string };
 
-  const { addToCart, removeFromCart } = useCartStore();
-  const [active, setActive] = useState(true);
+  const { cartItems, addToCart } = useCartStore();
 
-  const handleclick = (product: any) => {
-    if (active) {
-      addToCart(product);
-      setActive(!active);
-    } else {
-      removeFromCart(product.id);
-      setActive(!active);
-    }
-  };
-  type TProduct = {
-    id: number;
-    title: string;
-    description: string;
-    category: string;
-    cost: number;
-    src: string;
-    alt: string;
-  };
-
-  const handleAddToCart = (product: TProduct) => {
-    addToCart(product);
-    redirect("/cart");
-  };
   const product = productsData.find((p) => p.id === parseInt(id, 10));
 
   if (!product) {
@@ -57,37 +33,37 @@ export default function ProductPage() {
             {product.cost}.00 ₽
           </h1>
         </div>
-        <div className="flex flex-row">
-          <Button
-            onClick={() => handleAddToCart(product)}
-            className="m-4 text-lg"
-            size={"lg"}
-          >
-            Купить
-          </Button>
-          <Button
-            onClick={() => handleclick(product)}
-            className="m-4 text-lg"
-            size={"lg"}
-          >
-            В корзину
-          </Button>
+        <div className="flex justify-between">
+          <div className="flex justify-center mx-auto w-1/2 max-w-xs">
+            {cartItems.some(
+              (item) => item.id === product.id && item.quantity >= 1
+            ) ? (
+              <Counter item={product} />
+            ) : (
+              <Button
+                onClick={() => addToCart(product)}
+                className="m-4 text-lg"
+                size={"lg"}
+              >
+                Купить
+              </Button>
+            )}
+          </div>
 
-          {/* <button
-            onClick={() => handleclick(product)}
-            key={product.id}
-            className={`${
-              active
-                ? "hover:border-[#076e2f] hover:bg-[#076e2f] bg-[rgb(237,233,225)] shadow-lg hover:shadow-lg m-4 mr-2 px-4 py-2 border border-black/40 rounded-md w-32 h-10 text-center text-sm hover:text-white transition-all active:scale-110"
-                : "border-[#076e2f] bg-[#076e2f]   shadow-lg  m-4 mr-2 px-4 py-2 border  rounded-md w-32 h-10 text-center text-sm text-white transition-all"
-            }`}
+          <Button
+            onClick={() => {
+              addToCart(product);
+              redirect("/cart");
+            }}
+            className="m-4 w-1/2 text-lg"
+            size={"lg"}
           >
-            {active ? "Добавить" : "В корзине"}
-          </button> */}
+            Перейти в корзину
+          </Button>
         </div>
-        <div className="flex justify-center items-center shadow-lg p-4 border rounded-lg">
+        <div className="flex items-center shadow-lg p-4 border rounded-lg justify">
           <h3 className="text-xl">
-            Бесплатная доставка при заказе на сумму от 500 рублей.
+            Бесплатная доставка при заказе на сумму от 1000 рублей.
           </h3>
         </div>
       </div>
