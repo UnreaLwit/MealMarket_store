@@ -32,8 +32,8 @@ const Counter: React.FC<CounterProps> = ({ item }) => {
   };
 
   return (
-    <form className="flex justify-center mx-auto max-w-xs">
-      <div className="relative flex items-center max-w-[8rem]">
+    <form className="flex justify-center">
+      <div className="flex justify-center items-center">
         <button
           onClick={handleDecrement}
           type="button"
@@ -66,7 +66,7 @@ const Counter: React.FC<CounterProps> = ({ item }) => {
           id={`quantity-input-${item.id}`}
           data-input-counter
           aria-describedby="helper-text-explanation"
-          className="block border-gray-300 border-x-0 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 py-2.5 focus:border-blue-500 dark:focus:border-blue-500 focus:ring-blue-500 dark:focus:ring-blue-500 w-full h-11 text-center text-gray-900 text-sm dark:text-white dark:placeholder-gray-400"
+          className="block border-gray-300 border-x-0 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 py-2.5 focus:border-blue-500 dark:focus:border-blue-500 focus:ring-blue-500 dark:focus:ring-blue-500 w-[30%] h-11 text-center text-gray-900 text-lg dark:text-white dark:placeholder-gray-400"
           placeholder="0"
           required
         />

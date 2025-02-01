@@ -3,10 +3,19 @@ import { Button } from "../ui/button";
 import useCartStore from "@/providers/cartStore";
 import Link from "next/link";
 import Counter from "../../utils/Counter";
+import CartMotion from "../Motion/CartMotion";
 
 const CartItems = () => {
-  const { cartItems, removeFromCart, updateQuantity, clearCart } =
-    useCartStore();
+  const { cartItems, removeFromCart, clearCart } = useCartStore();
+
+  const handleClearCart = () => {
+    clearCart();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   const calculateTotal = () =>
     cartItems.reduce((total, item) => total + item.cost * item.quantity, 0);
   return (
@@ -24,42 +33,44 @@ const CartItems = () => {
               Список товаров
             </h1>
             <div>
-              <div className="[&::-webkit-scrollbar-thumb]:bg-[#737975]/70 [&::-webkit-scrollbar-track]:bg-[#737975]/30 snap-mandatory snap-y [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar]:w-2 min-h-[340px] max-h-[520px] overflow-y-auto scroll-smooth">
+              <div className="[&::-webkit-scrollbar-thumb]:bg-[#737975]/70 [&::-webkit-scrollbar-track]:bg-[#737975]/30 snap-mandatory snap-y [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar]:w-2 min-h-[340px] max-h-[660px] overflow-x-hidden overflow-y-auto scroll-smooth">
                 {cartItems.map((item) => (
-                  <div
-                    className="flex justify-around border-2 shadow-lg m-4 mb-4 snap-center rounded-lg"
-                    key={item.id}
-                  >
-                    <Link className="m-4 w-1/2" href={`/product/${item.id}`}>
-                      <img
-                        src={item.src}
-                        alt={item.alt}
-                        className="shadow-lg"
-                      />
-                    </Link>
+                  <CartMotion key={item.id}>
+                    <div
+                      className="flex justify-around border-2 shadow-lg m-12 mt-4 mb-10 snap-center rounded-lg"
+                      key={item.id}
+                    >
+                      <Link className="m-4 w-1/2" href={`/product/${item.id}`}>
+                        <img
+                          src={item.src}
+                          alt={item.alt}
+                          className="shadow-lg"
+                        />
+                      </Link>
 
-                    <div className="flex flex-col justify-center items-center mr-4 w-1/2 text-center">
-                      <span className="text-xl">
-                        <h2 className="mb-2 text-xl">{item.title}</h2>
-                        <span>Цена:</span>
-                        {item.cost} ₽
-                      </span>
-                      <div className="m-2 w-1/2 text-2xl">
-                        <div key={item.id}>
-                          <Counter item={item} />
+                      <div className="flex flex-col justify-center items-center mr-4 w-1/2 text-center">
+                        <span className="text-xl">
+                          <h2 className="mb-2 text-xl">{item.title}</h2>
+                          <span>Цена:</span>
+                          {item.cost} ₽
+                        </span>
+                        <div className="m-2 w-1/2 text-2xl">
+                          <div key={item.id}>
+                            <Counter item={item} />
+                          </div>
+
+                          <Button
+                            onClick={() => removeFromCart(item.id)}
+                            color="inherit"
+                            variant="outline"
+                            className="my-2"
+                          >
+                            Удалить
+                          </Button>
                         </div>
-
-                        <Button
-                          onClick={() => removeFromCart(item.id)}
-                          color="inherit"
-                          variant="outline"
-                          className="my-2"
-                        >
-                          Удалить
-                        </Button>
                       </div>
                     </div>
-                  </div>
+                  </CartMotion>
                 ))}
               </div>
 
@@ -69,7 +80,7 @@ const CartItems = () => {
 
               <Button
                 className="flex mx-auto my-2"
-                onClick={clearCart}
+                onClick={handleClearCart}
                 color="inherit"
                 variant="outline"
               >

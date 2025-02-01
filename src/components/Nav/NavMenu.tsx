@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import Link from "next/link";
 import { FiShoppingCart } from "react-icons/fi";
@@ -9,33 +10,40 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import ButtonMotion from "../Motion/ButtonMotion";
 
 export function NavMenu() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem className="shadow-md mr-2 border rounded-lg">
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Главная
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem className="shadow-md !mr-2 border rounded-lg">
-          <Link href="/shop" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Магазин
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem className="shadow-md border rounded-lg">
-          <Link href="/cart" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Корзина
-              <FiShoppingCart />
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
+        <ButtonMotion>
+          <NavigationMenuItem className="shadow-md mr-2 border rounded-lg">
+            <Link href="/" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Главная
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+        </ButtonMotion>
+        <ButtonMotion>
+          <NavigationMenuItem className="shadow-md !mr-2 border rounded-lg">
+            <Link href="/shop" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Магазин
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+        </ButtonMotion>
+        <ButtonMotion>
+          <NavigationMenuItem className="shadow-md border rounded-lg">
+            <Link href="/cart" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Корзина
+                <FiShoppingCart />
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+        </ButtonMotion>
       </NavigationMenuList>
     </NavigationMenu>
   );

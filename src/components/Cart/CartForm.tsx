@@ -16,6 +16,7 @@ import MaskedInput from "./MaskedInput";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../ui/dialog";
 import useCartStore from "@/providers/cartStore";
 import { redirect } from "next/navigation";
+import ButtonMotion from "../Motion/ButtonMotion";
 
 const CartForm: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -200,8 +201,9 @@ const CartForm: React.FC = () => {
               </FormItem>
             )}
           />
-
-          <Button type="submit">Отправить</Button>
+          <ButtonMotion>
+            <Button type="submit">Отправить</Button>
+          </ButtonMotion>
         </form>
       </Form>
       <Dialog open={isModalOpen} onOpenChange={handleOpenChange}>

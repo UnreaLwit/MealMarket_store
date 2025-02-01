@@ -1,12 +1,4 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import productsData from "@/data/productsData";
 import { useEffect, useState, useMemo } from "react";
 import {
@@ -18,13 +10,8 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import ShopFilter from "@/components/Shop/ShopFilter";
-import Link from "next/link";
-import useCartStore from "@/providers/cartStore";
-import { cn } from "@/lib/utils";
-import { Toggle } from "../ui/toggle";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import useFavoritesStore from "@/providers/favoritesStore";
 import CardItem from "../../utils/CardItem";
+import ButtonMotion from "../Motion/ButtonMotion";
 
 type Product = {
   id: number;
@@ -45,9 +32,6 @@ export function ShopItems() {
     price: "",
     alphabet: "",
   });
-  const { addToCart } = useCartStore();
-  const { favorites, addToFavorites, removeFromFavorites, isFavorite } =
-    useFavoritesStore();
 
   // Функция для обработки изменения фильтров
   const handleFilterChange = (newFilter: typeof filter) => {
@@ -92,7 +76,10 @@ export function ShopItems() {
 
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   const nextPage = () => {
@@ -114,14 +101,6 @@ export function ShopItems() {
     setFilter({ category: "", price: "", alphabet: "" });
   };
 
-  const handleFavorite = (product: Product) => {
-    if (isFavorite(product.id)) {
-      removeFromFavorites(product.id);
-    } else {
-      addToFavorites(product);
-    }
-  };
-
   return (
     <div className="flex flex-col justify-center">
       <div className="flex justify-start ml-36">
@@ -141,13 +120,16 @@ export function ShopItems() {
       <div className="flex justify-center">
         <Pagination>
           <PaginationContent>
-            <PaginationPrevious
-              href="#"
-              onClick={prevPage}
-              className={`${
-                currentPage === 1 ? "opacity-50 pointer-events-none" : ""
-              }`}
-            />
+            <ButtonMotion>
+              <PaginationPrevious
+                onClick={prevPage}
+                className={`${
+                  currentPage === 1
+                    ? "opacity-50 pointer-events-none "
+                    : "cursor-pointer"
+                }`}
+              />
+            </ButtonMotion>
             {Array.from(
               {
                 length: Math.ceil(
@@ -155,33 +137,37 @@ export function ShopItems() {
                 ),
               },
               (_, i) => (
-                <PaginationItem key={i + 1}>
-                  <PaginationLink
-                    key={i + 1}
-                    className={`${
-                      currentPage === i + 1
-                        ? "border border-input bg-background"
-                        : "ghost"
-                    }`}
-                    onClick={() => paginate(i + 1)}
-                    href="#"
-                  >
-                    {i + 1}
-                  </PaginationLink>
-                </PaginationItem>
+                <ButtonMotion key={i + 1}>
+                  <PaginationItem key={i + 1}>
+                    <PaginationLink
+                      key={i + 1}
+                      className={`${
+                        currentPage === i + 1
+                          ? "border border-input bg-background cursor-pointer"
+                          : "ghost cursor-pointer"
+                      }`}
+                      onClick={() => paginate(i + 1)}
+                    >
+                      {i + 1}
+                    </PaginationLink>
+                  </PaginationItem>
+                </ButtonMotion>
               )
             )}
             <PaginationItem>
-              <PaginationNext
-                href="#"
-                onClick={nextPage}
-                className={`${
-                  currentPage ===
-                  Math.ceil(filteredAndSortedProducts.length / productsPerPage)
-                    ? "opacity-50 pointer-events-none"
-                    : ""
-                }`}
-              />
+              <ButtonMotion>
+                <PaginationNext
+                  onClick={nextPage}
+                  className={`${
+                    currentPage ===
+                    Math.ceil(
+                      filteredAndSortedProducts.length / productsPerPage
+                    )
+                      ? "opacity-50 pointer-events-none"
+                      : "cursor-pointer"
+                  }`}
+                />
+              </ButtonMotion>
             </PaginationItem>
           </PaginationContent>
         </Pagination>

@@ -15,6 +15,7 @@ import { Check, ChevronsDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import productsData from "@/data/productsData";
+import ButtonMotion from "../Motion/ButtonMotion";
 
 type FilterType = {
   category: string;
@@ -121,17 +122,19 @@ const ShopFilter: React.FC<ShopFilterProps> = ({
     <div className="flex justify-evenly mb-8 w-fit">
       {/* Категория */}
       <Popover open={openCategory} onOpenChange={setOpenCategory}>
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            role="combobox"
-            aria-expanded={openCategory}
-            className="justify-between shadow-lg mr-4 w-auto"
-          >
-            {filter.category ? filter.category : "Категория"}
-            <ChevronsDown className="opacity-50" />
-          </Button>
-        </PopoverTrigger>
+        <ButtonMotion>
+          <PopoverTrigger asChild>
+            <Button
+              variant="outline"
+              role="combobox"
+              aria-expanded={openCategory}
+              className="justify-between shadow-lg mr-4 w-auto"
+            >
+              {filter.category ? filter.category : "Категория"}
+              <ChevronsDown className="opacity-50" />
+            </Button>
+          </PopoverTrigger>
+        </ButtonMotion>
         <PopoverContent className="p-0 w-[200px]">
           <Command>
             <CommandList>
@@ -151,21 +154,24 @@ const ShopFilter: React.FC<ShopFilterProps> = ({
 
       {/* Цена */}
       <Popover open={openPrice} onOpenChange={setOpenPrice}>
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            role="combobox"
-            aria-expanded={openPrice}
-            className="justify-between shadow-lg mr-4 w-auto"
-          >
-            {filter.price === "lowToHigh"
-              ? "От низкой к высокой"
-              : filter.price === "highToLow"
-              ? "От высокой к низкой"
-              : "Цена"}
-            <ChevronsDown className="opacity-50" />
-          </Button>
-        </PopoverTrigger>
+        <ButtonMotion>
+          <PopoverTrigger asChild>
+            <Button
+              variant="outline"
+              role="combobox"
+              aria-expanded={openPrice}
+              className="justify-between shadow-lg mr-4 w-auto"
+            >
+              {filter.price === "lowToHigh"
+                ? "От низкой к высокой"
+                : filter.price === "highToLow"
+                ? "От высокой к низкой"
+                : "Цена"}
+              <ChevronsDown className="opacity-50" />
+            </Button>
+          </PopoverTrigger>
+        </ButtonMotion>
+
         <PopoverContent className="p-0 w-[200px]">
           <Command>
             <CommandList>
@@ -183,21 +189,24 @@ const ShopFilter: React.FC<ShopFilterProps> = ({
 
       {/* Алфавит */}
       <Popover open={openAlphabet} onOpenChange={setOpenAlphabet}>
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            role="combobox"
-            aria-expanded={openAlphabet}
-            className="justify-between shadow-lg mr-4 w-auto"
-          >
-            {filter.alphabet === "aToz"
-              ? "От А до Я"
-              : filter.alphabet === "zToa"
-              ? "От Я до А"
-              : "Алфавит"}
-            <ChevronsDown className="opacity-50" />
-          </Button>
-        </PopoverTrigger>
+        <ButtonMotion>
+          <PopoverTrigger asChild>
+            <Button
+              variant="outline"
+              role="combobox"
+              aria-expanded={openAlphabet}
+              className="justify-between shadow-lg mr-4 w-auto"
+            >
+              {filter.alphabet === "aToz"
+                ? "От А до Я"
+                : filter.alphabet === "zToa"
+                ? "От Я до А"
+                : "Алфавит"}
+              <ChevronsDown className="opacity-50" />
+            </Button>
+          </PopoverTrigger>
+        </ButtonMotion>
+
         <PopoverContent className="p-0 w-[200px]">
           <Command>
             <CommandList>
@@ -209,12 +218,14 @@ const ShopFilter: React.FC<ShopFilterProps> = ({
         </PopoverContent>
       </Popover>
 
-      <Button
-        onClick={handleResetFilters}
-        className="border-input bg-red-500 hover:bg-red-700 shadow-lg p-2 border rounded-lg text-white"
-      >
-        Сбросить все фильтры
-      </Button>
+      <ButtonMotion>
+        <Button
+          onClick={handleResetFilters}
+          className="border-input bg-red-500 hover:bg-red-700 shadow-lg p-2 border rounded-lg text-white"
+        >
+          Сбросить все фильтры
+        </Button>
+      </ButtonMotion>
     </div>
   );
 };

@@ -8,6 +8,7 @@ import { auth, signIn, signOut } from "@/auth";
 import { ToggleTheme } from "../theme/ToggleTheme";
 import { NavMenu } from "./NavMenu";
 import { NavSearch } from "./NavSearch";
+import NavFavoriteButton from "./NavFavoriteButton";
 
 const Navbar = async () => {
   const session = await auth();
@@ -34,12 +35,7 @@ const Navbar = async () => {
         <div className="flex items-center gap-5">
           {session && session?.user ? (
             <>
-              <Link
-                className="block space-y-1 hover:bg-accent focus:bg-accent p-3 rounded-md hover:text-accent-foreground focus:text-accent-foreground no-underline leading-none transition-colors select-none outline-none"
-                href="/favorite"
-              >
-                <MdFavorite className="drop-shadow-md text-red-500" size={20} />
-              </Link>
+              <NavFavoriteButton />
 
               <span>{session?.user?.name}</span>
 
