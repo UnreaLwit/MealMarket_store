@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import productsData from "@/data/productsData";
 import { redirect, useParams } from "next/navigation";
 import Counter from "@/utils/Counter";
+import Link from "next/link";
 
 export default function ProductPage() {
   const params = useParams();
@@ -14,7 +15,14 @@ export default function ProductPage() {
   const product = productsData.find((p) => p.id === parseInt(id, 10));
 
   if (!product) {
-    return <div>Продукт не найден</div>;
+    return (
+      <div className="flex flex-col justify-center">
+        <h1 className="text-5xl text-center">Страница не найдена</h1>;
+        <Link className="mx-auto" href="/">
+          <Button>На главную</Button>
+        </Link>
+      </div>
+    );
   }
 
   return (

@@ -1,9 +1,22 @@
 import * as React from "react";
-
 import { cn } from "@/lib/utils";
 
 const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
-  ({ className, type, ...props }, ref) => {
+  ({ className, type, inputMode, onChange, ...props }, ref) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      let newValue = e.target.value;
+      if (type === "text" && inputMode !== "numeric") {
+        newValue = newValue.replace(/[^a-zA-Zа-яА-Я\s]/g, "");
+      }
+      if (inputMode === "numeric") {
+        newValue = newValue.replace(/\D/g, "");
+      }
+      if (onChange) {
+        e.target.value = newValue;
+        onChange(e);
+      }
+    };
+
     return (
       <input
         type={type}
@@ -12,11 +25,14 @@ const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
           className
         )}
         ref={ref}
+        inputMode={inputMode}
+        onChange={handleChange} // Используем наш обработчик
         {...props}
       />
     );
   }
 );
+
 Input.displayName = "Input";
 
 export { Input };
