@@ -54,7 +54,7 @@ const CartItems = () => {
                           <span>Цена:</span>
                           {item.cost} ₽
                         </span>
-                        <div className="m-2 w-1/2 text-2xl">
+                        <div className="m-2 text-2xl">
                           <div key={item.id}>
                             <Counter item={item} />
                           </div>
