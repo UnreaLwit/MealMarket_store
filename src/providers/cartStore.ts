@@ -1,26 +1,7 @@
+import { TCartState, TProduct } from "@/types/types";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
-type TProduct = {
-  id: number;
-  title: string;
-  description: string;
-  category: string;
-  cost: number;
-  src: string;
-  alt: string;
-};
-type TCartItem = TProduct & {
-  quantity: number;
-};
-
-type TCartState = {
-  cartItems: TCartItem[];
-  addToCart: (product: TProduct) => void;
-  removeFromCart: (productId: number) => void;
-  updateQuantity: (productId: number, quantity: number) => void;
-  clearCart: () => void;
-};
 const useCartStore = create<TCartState>()(
   persist(
     (set) => ({

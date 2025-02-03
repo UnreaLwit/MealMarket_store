@@ -1,3 +1,4 @@
+"use client";
 import {
   Card,
   CardContent,
@@ -9,30 +10,22 @@ import Link from "next/link";
 import { Toggle } from "../components/ui/toggle";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { Button } from "../components/ui/button";
-import useCartStore from "@/providers/cartStore";
 import useFavoritesStore from "@/providers/favoritesStore";
-import Counter from "./Counter";
 import { useSession } from "next-auth/react";
 import CardMotion from "@/components/Motion/CardMotion";
 import ButtonMotion from "@/components/Motion/ButtonMotion";
-type Product = {
-  id: number;
-  title: string;
-  description: string;
-  category: string;
-  cost: number;
-  src: string;
-  alt: string;
-};
+import { TProduct } from "@/types/types";
+import Counter from "./Counter";
+import useCartStore from "@/providers/cartStore";
 
-const CardItem = ({ product }: { product: Product }) => {
+const CardItem = ({ product }: { product: TProduct }) => {
   const { cartItems, addToCart } = useCartStore();
   const { addToFavorites, removeFromFavorites, isFavorite } =
     useFavoritesStore();
 
   const { data: session, status } = useSession();
 
-  const handleFavorite = (product: Product) => {
+  const handleFavorite = (product: TProduct) => {
     if (isFavorite(product.id)) {
       removeFromFavorites(product.id);
     } else {

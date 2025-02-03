@@ -1,5 +1,4 @@
 "use client";
-import React, { useState } from "react";
 import {
   Command,
   CommandGroup,
@@ -11,25 +10,15 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { Button } from "../ui/button";
+import React, { useState, useMemo, useCallback } from "react";
 import { Check, ChevronsDown } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Button } from "../ui/button";
 import productsData from "@/data/productsData";
+import { TShopFilter, TShopFilterProps } from "@/types/types";
 import ButtonMotion from "../Motion/ButtonMotion";
 
-type FilterType = {
-  category: string;
-  price: string;
-  alphabet: string;
-};
-
-type ShopFilterProps = {
-  filter: FilterType;
-  onFilterChange: (newFilter: FilterType) => void;
-  handleResetFilters: () => void;
-};
-
-const ShopFilter: React.FC<ShopFilterProps> = ({
+const ShopFilter: React.FC<TShopFilterProps> = ({
   filter,
   onFilterChange,
   handleResetFilters,
@@ -38,89 +27,96 @@ const ShopFilter: React.FC<ShopFilterProps> = ({
   const [openPrice, setOpenPrice] = useState(false);
   const [openAlphabet, setOpenAlphabet] = useState(false);
 
-  const handleOptionChange = (
-    field: keyof FilterType,
-    value: string,
-    reset = false
-  ) => {
-    let newFilter: FilterType;
+  const handleOptionChange = useCallback(
+    (field: keyof TShopFilter, value: string, reset = false) => {
+      let newFilter: TShopFilter;
 
-    if (reset) {
-      newFilter = {
-        ...filter,
-        [field]: "",
-      };
-    } else {
-      newFilter = {
-        ...filter,
-        [field]: value === "Не фильтровать" ? "" : value,
-      };
-    }
+      if (reset) {
+        newFilter = {
+          ...filter,
+          [field]: "",
+        };
+      } else {
+        newFilter = {
+          ...filter,
+          [field]: value === "Не фильтровать" ? "" : value,
+        };
+      }
 
-    // Сбрасываем противоречивые фильтры
-    if (field === "price" && newFilter.price) {
-      newFilter.alphabet = "";
-    } else if (field === "alphabet" && newFilter.alphabet) {
-      newFilter.price = "";
-    }
+      if (field === "price" && newFilter.price) {
+        newFilter.alphabet = "";
+      } else if (field === "alphabet" && newFilter.alphabet) {
+        newFilter.price = "";
+      }
 
-    onFilterChange(newFilter);
+      onFilterChange(newFilter);
 
-    // Закрываем Popover после выбора
-    if (field === "category") setOpenCategory(false);
-    if (field === "price") setOpenPrice(false);
-    if (field === "alphabet") setOpenAlphabet(false);
-  };
+      if (field === "category") setOpenCategory(false);
+      if (field === "price") setOpenPrice(false);
+      if (field === "alphabet") setOpenAlphabet(false);
+    },
+    [filter, onFilterChange]
+  );
 
-  const renderFilterOptions = (
-    field: keyof FilterType,
-    options: string[],
-    defaultValue: string
-  ) => {
-    return (
-      <>
-        <CommandItem
-          value="Не фильтровать"
-          onSelect={() => handleOptionChange(field, "Не фильтровать", true)}
-        >
-          <Check
-            className={cn(
-              "ml-auto",
-              !filter[field] ? "opacity-100" : "opacity-0"
-            )}
-          />
-          Не фильтровать
-        </CommandItem>
-        {options.map((option) => (
+  const filterOptions = useMemo(() => {
+    return {
+      category: Array.from(
+        new Set(productsData.map((product) => product.category))
+      ),
+      price: ["lowToHigh", "highToLow"],
+      alphabet: ["aToz", "zToa"],
+    };
+  }, [productsData]);
+
+  const renderFilterOptions = useCallback(
+    (field: keyof TShopFilter, options: string[], defaultValue: string) => {
+      return (
+        <>
           <CommandItem
-            key={option}
-            value={option}
-            onSelect={() => handleOptionChange(field, option)}
+            value="Не фильтровать"
+            onSelect={() => handleOptionChange(field, "Не фильтровать", true)}
           >
             <Check
               className={cn(
                 "ml-auto",
-                filter[field] === option ? "opacity-100" : "opacity-0"
+                !filter[field] ? "opacity-100" : "opacity-0"
               )}
             />
-            {option === "lowToHigh"
-              ? "От низкой к высокой"
-              : option === "highToLow"
-              ? "От высокой к низкой"
-              : option === "aToz"
-              ? "От А до Я"
-              : option === "zToa"
-              ? "От Я до А"
-              : option}
+            Не фильтровать
           </CommandItem>
-        ))}
-      </>
-    );
-  };
+          {options.map((option) => (
+            <CommandItem
+              key={option}
+              value={option}
+              onSelect={() => handleOptionChange(field, option)}
+            >
+              <Check
+                className={cn(
+                  "ml-auto",
+                  filter[field] === option ? "opacity-100" : "opacity-0"
+                )}
+              />
+              {option === "lowToHigh"
+                ? "От низкой к высокой"
+                : option === "highToLow"
+                ? "От высокой к низкой"
+                : option === "aToz"
+                ? "От А до Я"
+                : option === "zToa"
+                ? "От Я до А"
+                : option}
+            </CommandItem>
+          ))}
+        </>
+      );
+    },
+    [filter, handleOptionChange]
+  );
+
+  const popoverContentClasses = "p-0 w-[200px]";
 
   return (
     <div className="flex justify-evenly mb-8 w-fit">
-      {/* Категория */}
       <Popover open={openCategory} onOpenChange={setOpenCategory}>
         <ButtonMotion>
           <PopoverTrigger asChild>
@@ -135,15 +131,13 @@ const ShopFilter: React.FC<ShopFilterProps> = ({
             </Button>
           </PopoverTrigger>
         </ButtonMotion>
-        <PopoverContent className="p-0 w-[200px]">
+        <PopoverContent className={popoverContentClasses}>
           <Command>
             <CommandList>
               <CommandGroup>
                 {renderFilterOptions(
                   "category",
-                  Array.from(
-                    new Set(productsData.map((product) => product.category))
-                  ),
+                  filterOptions.category,
                   "Категория"
                 )}
               </CommandGroup>
@@ -152,7 +146,6 @@ const ShopFilter: React.FC<ShopFilterProps> = ({
         </PopoverContent>
       </Popover>
 
-      {/* Цена */}
       <Popover open={openPrice} onOpenChange={setOpenPrice}>
         <ButtonMotion>
           <PopoverTrigger asChild>
@@ -171,23 +164,17 @@ const ShopFilter: React.FC<ShopFilterProps> = ({
             </Button>
           </PopoverTrigger>
         </ButtonMotion>
-
-        <PopoverContent className="p-0 w-[200px]">
+        <PopoverContent className={popoverContentClasses}>
           <Command>
             <CommandList>
               <CommandGroup>
-                {renderFilterOptions(
-                  "price",
-                  ["lowToHigh", "highToLow"],
-                  "Цена"
-                )}
+                {renderFilterOptions("price", filterOptions.price, "Цена")}
               </CommandGroup>
             </CommandList>
           </Command>
         </PopoverContent>
       </Popover>
 
-      {/* Алфавит */}
       <Popover open={openAlphabet} onOpenChange={setOpenAlphabet}>
         <ButtonMotion>
           <PopoverTrigger asChild>
@@ -206,12 +193,15 @@ const ShopFilter: React.FC<ShopFilterProps> = ({
             </Button>
           </PopoverTrigger>
         </ButtonMotion>
-
-        <PopoverContent className="p-0 w-[200px]">
+        <PopoverContent className={popoverContentClasses}>
           <Command>
             <CommandList>
               <CommandGroup>
-                {renderFilterOptions("alphabet", ["aToz", "zToa"], "Алфавит")}
+                {renderFilterOptions(
+                  "alphabet",
+                  filterOptions.alphabet,
+                  "Алфавит"
+                )}
               </CommandGroup>
             </CommandList>
           </Command>

@@ -1,7 +1,7 @@
 "use client";
+import Link from "next/link";
 import ButtonMotion from "@/components/Motion/ButtonMotion";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 export default function NotFound() {
   return (

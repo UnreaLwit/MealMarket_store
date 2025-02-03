@@ -1,21 +1,8 @@
 import useCartStore from "@/providers/cartStore";
+import { TCounterProps } from "@/types/types";
 import React from "react";
 
-type Product = {
-  id: number;
-  title: string;
-  description: string;
-  category: string;
-  cost: number;
-  src: string;
-  alt: string;
-};
-
-type CounterProps = {
-  item: Product;
-};
-
-const Counter: React.FC<CounterProps> = ({ item }) => {
+const Counter: React.FC<TCounterProps> = ({ item }) => {
   const { cartItems, removeFromCart, updateQuantity } = useCartStore();
   const cartItem = cartItems.find((cartItem) => cartItem.id === item.id);
 

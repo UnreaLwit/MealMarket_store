@@ -4,9 +4,24 @@ import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import productsData from "@/data/productsData";
 
-export function NavSearch() {
+const NavSearch = () => {
   const [query, setQuery] = useState("");
   const [focused, setFocused] = useState(false);
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const filteredProducts = useMemo(() => {
+    return productsData
+      .filter((product) =>
+        product.title.toLowerCase().includes(query.toLowerCase())
+      )
+      .slice(0, 5);
+  }, [query]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
@@ -30,30 +45,15 @@ export function NavSearch() {
     }
   };
 
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   const handleProductClick = () => {
     setQuery("");
     setFocused(false);
   };
 
-  const filteredProducts = useMemo(() => {
-    return productsData
-      .filter((product) =>
-        product.title.toLowerCase().includes(query.toLowerCase())
-      )
-      .slice(0, 5);
-  }, [query]);
-
   return (
     <div
-      className={`relative   w-64 m-2 shadow-md ${
-        focused ? "" : ""
+      className={`relative w-64 m-2 shadow-md ${
+        focused ? "w-72" : ""
       } transition-width duration-300 search-container`}
     >
       <Input
@@ -91,4 +91,6 @@ export function NavSearch() {
       )}
     </div>
   );
-}
+};
+
+export default NavSearch;

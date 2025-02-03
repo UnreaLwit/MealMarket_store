@@ -1,11 +1,11 @@
-import Image from "next/image";
-import React from "react";
-import { Separator } from "@/components/ui/separator";
 import {
   IoBriefcaseOutline,
   IoGiftOutline,
   IoHelpCircleOutline,
 } from "react-icons/io5";
+import React from "react";
+import Image from "next/image";
+import { Separator } from "@/components/ui/separator";
 
 const Footer = () => {
   return (

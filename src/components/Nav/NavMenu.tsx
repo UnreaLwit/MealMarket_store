@@ -1,8 +1,4 @@
 "use client";
-import * as React from "react";
-import Link from "next/link";
-import { FiShoppingCart } from "react-icons/fi";
-import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -10,9 +6,13 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { FiShoppingCart } from "react-icons/fi";
+import { cn } from "@/lib/utils";
+import * as React from "react";
+import Link from "next/link";
 import ButtonMotion from "../Motion/ButtonMotion";
 
-export function NavMenu() {
+const NavMenu = () => {
   return (
     <NavigationMenu className="z-0 m-2">
       <NavigationMenuList>
@@ -47,10 +47,10 @@ export function NavMenu() {
       </NavigationMenuList>
     </NavigationMenu>
   );
-}
+};
 
 const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
+  React.ComponentRef<"a">,
   React.ComponentPropsWithoutRef<"a">
 >(({ className, title, children, ...props }, ref) => {
   return (
@@ -74,3 +74,5 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem";
+
+export default NavMenu;

@@ -1,5 +1,3 @@
-"use client";
-import { cn } from "@/lib/utils";
 import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 const categories = [
@@ -30,22 +28,20 @@ const categories = [
   },
 ];
 
-export function HomeCategory() {
+const HomeCategory = () => {
   return (
     <div className="flex flex-wrap justify-center">
       {categories.map((product, i) => (
         <div key={i}>
           <Card
             key={i}
-            className={cn(
-              "max-w-[200px] min-w-[200px] h-[100px] flex  justify-between items-center ml-4 mr-4 mb-8 shadow-lg"
-            )}
+            className="flex justify-between items-center shadow-lg mx-4 mb-8 w-[200px] h-[100px]"
           >
-            <CardHeader className="p-2 pr-0 pb-0 w-1/2 place-self-start">
+            <CardHeader className="pt-2 pl-2 w-1/2 place-self-start">
               <CardTitle className="text-xl">{product.title}</CardTitle>
             </CardHeader>
 
-            <CardFooter className="pt-0 pr-2 pb-2 pl-0 place-self-end">
+            <CardFooter className="pr-2 pb-2 place-self-end">
               <img
                 className="rounded-lg"
                 src={product.src}
@@ -59,4 +55,6 @@ export function HomeCategory() {
       ))}
     </div>
   );
-}
+};
+
+export default HomeCategory;

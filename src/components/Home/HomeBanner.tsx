@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import ButtonMotion from "../Motion/ButtonMotion";
@@ -17,8 +16,9 @@ const HomeBanner = () => {
         <ButtonMotion>
           <Link href="/shop">
             <Button
-              className="shadow-lg p-6 border rounded-lg font-bold text-xl"
+              className="shadow-lg border rounded-lg font-bold text-xl"
               variant="outline"
+              size="lg"
             >
               Заказать
             </Button>

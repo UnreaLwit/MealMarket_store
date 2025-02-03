@@ -1,12 +1,15 @@
-import React from "react";
+"use client";
 import { Button } from "../ui/button";
-import useCartStore from "@/providers/cartStore";
 import Link from "next/link";
-import Counter from "../../utils/Counter";
+import useCartStore from "@/providers/cartStore";
 import CartMotion from "../Motion/CartMotion";
+import Counter from "@/utils/Counter";
 
 const CartItems = () => {
   const { cartItems, removeFromCart, clearCart } = useCartStore();
+
+  const calculateTotal = () =>
+    cartItems.reduce((total, item) => total + item.cost * item.quantity, 0);
 
   const handleClearCart = () => {
     clearCart();
@@ -16,8 +19,6 @@ const CartItems = () => {
     });
   };
 
-  const calculateTotal = () =>
-    cartItems.reduce((total, item) => total + item.cost * item.quantity, 0);
   return (
     <div>
       {cartItems.length === 0 ? (
@@ -46,7 +47,7 @@ const CartItems = () => {
 
                       <div className="flex flex-col justify-center items-center mr-4 w-1/2 text-center">
                         <span className="text-xl">
-                          <h2 className="mb-2 text-xl">{item.title}</h2>
+                          <h2 className="mb-2 text-2xl">{item.title}</h2>
                           <span>Цена:</span>
                           {item.cost} ₽
                         </span>
@@ -70,7 +71,7 @@ const CartItems = () => {
                 ))}
               </div>
 
-              <p className="flex justify-center pt-2 pb-2 text-2xl">
+              <p className="flex justify-center my-4 text-2xl">
                 Итого: {calculateTotal()} ₽
               </p>
 

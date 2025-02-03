@@ -1,22 +1,6 @@
+import { TFavoritesState, TProduct } from "@/types/types";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-
-type TProduct = {
-  id: number;
-  title: string;
-  description: string;
-  category: string;
-  cost: number;
-  src: string;
-  alt: string;
-};
-
-type TFavoritesState = {
-  favorites: TProduct[];
-  addToFavorites: (product: TProduct) => void;
-  removeFromFavorites: (productId: number) => void;
-  isFavorite: (productId: number) => boolean;
-};
 
 const useFavoritesStore = create<TFavoritesState>()(
   persist(

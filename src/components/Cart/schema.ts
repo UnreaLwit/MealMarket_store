@@ -7,19 +7,17 @@ export const formSchema = z.object({
     .max(25, { message: "Имя не должно превышать 25 символов" }),
   email: z
     .string()
-    .email({ message: "Неверный формат email" })
+    .email({ message: "Email должен быть в формате mail@some.ru" })
     .max(25, { message: "Email не должен превышать 25 символов" }),
   phone: z
     .string()
     .min(18, { message: "Телефон должен быть в формате +7 (999) 999-99-99" }),
-  cardNumber: z
-    .string()
-    .min(19, { message: "Номер карты должен быть не менее 19 символов" }),
+  cardNumber: z.string().min(19, { message: "Проверьте номер карты" }),
   expiryDate: z
     .string()
-    .min(5, { message: "Дата истечения должна быть в формате MM/YY" })
+    .min(5, { message: "Дата истечения должна быть в формате 01/25" })
     .regex(/^(0[1-9]|1[0-2])\/\d{2}$/, {
-      message: "Дата истечения должна быть в формате MM/YY",
+      message: "Дата истечения должна быть в формате 01/25",
     }),
   cvv: z
     .string()

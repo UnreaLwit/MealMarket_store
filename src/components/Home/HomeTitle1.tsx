@@ -1,7 +1,6 @@
 "use client";
-import Link from "next/link";
-import React from "react";
 import { FaArrowRight } from "react-icons/fa";
+import Link from "next/link";
 import ButtonMotion from "../Motion/ButtonMotion";
 
 const HomeTitle1 = () => {

@@ -1,13 +1,12 @@
 import { MdOutlineLogout } from "react-icons/md";
 import { MdOutlineLogin } from "react-icons/md";
-import { MdFavorite } from "react-icons/md";
+import { ToggleTheme } from "../theme/ToggleTheme";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { auth, signIn, signOut } from "@/auth";
-import { ToggleTheme } from "../theme/ToggleTheme";
-import { NavMenu } from "./NavMenu";
-import { NavSearch } from "./NavSearch";
+import NavMenu from "./NavMenu";
+import NavSearch from "./NavSearch";
 import NavFavoriteButton from "./NavFavoriteButton";
 
 const Navbar = async () => {
@@ -24,7 +23,7 @@ const Navbar = async () => {
               alt="logo"
               width={50}
               height={50}
-            ></Image>
+            />
             <Link href="/">
               <span className="drop-shadow-md ml-2 text-3xl">MealMarket</span>
             </Link>

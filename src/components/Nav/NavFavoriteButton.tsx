@@ -1,7 +1,7 @@
 "use client";
+import { MdFavorite } from "react-icons/md";
 import Link from "next/link";
 import React from "react";
-import { MdFavorite } from "react-icons/md";
 import ButtonMotion from "../Motion/ButtonMotion";
 
 const NavFavoriteButton = () => {

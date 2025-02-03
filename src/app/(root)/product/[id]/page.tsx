@@ -1,58 +1,34 @@
 "use client";
-import useCartStore from "@/providers/cartStore";
 import { Button } from "@/components/ui/button";
-import productsData from "@/data/productsData";
-import { redirect, useParams } from "next/navigation";
-import Counter from "@/utils/Counter";
-import Link from "next/link";
-import { useLayoutEffect } from "react";
-import ButtonMotion from "@/components/Motion/ButtonMotion";
-import { Toggle } from "@/components/ui/toggle";
-import useFavoritesStore from "@/providers/favoritesStore";
-import { useSession } from "next-auth/react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { Toggle } from "@/components/ui/toggle";
+import { redirect, useParams } from "next/navigation";
+import { useSession } from "next-auth/react";
+import useCartStore from "@/providers/cartStore";
+import useFavoritesStore from "@/providers/favoritesStore";
+import productsData from "@/data/productsData";
+import { useLayoutEffect } from "react";
+import { TProduct } from "@/types/types";
+import NotFound from "@/app/not-found";
+import ButtonMotion from "@/components/Motion/ButtonMotion";
+import Counter from "@/utils/Counter";
 
-type Product = {
-  id: number;
-  title: string;
-  description: string;
-  category: string;
-  cost: number;
-  src: string;
-  alt: string;
-};
-
-export default function ProductPage() {
+const ProductPage = () => {
   const params = useParams();
   const { id } = params as { id: string };
-
-  const { cartItems, addToCart } = useCartStore();
-
-  const product = productsData.find((p) => p.id === parseInt(id, 10));
+  const { data: session, status } = useSession();
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  if (!product) {
-    return (
-      <div className="flex flex-col justify-center">
-        <h1 className="text-5xl text-center">Страница не найдена</h1>;
-        <Link className="mx-auto" href="/">
-          <ButtonMotion>
-            <Button>На главную</Button>
-          </ButtonMotion>
-        </Link>
-      </div>
-    );
-  }
-
+  const { cartItems, addToCart } = useCartStore();
   const { addToFavorites, removeFromFavorites, isFavorite } =
     useFavoritesStore();
 
-  const { data: session, status } = useSession();
+  const product = productsData.find((p) => p.id === parseInt(id, 10));
 
-  const handleFavorite = (product: Product) => {
+  const handleFavorite = (product: TProduct) => {
     if (isFavorite(product.id)) {
       removeFromFavorites(product.id);
     } else {
@@ -60,10 +36,13 @@ export default function ProductPage() {
     }
   };
 
+  if (!product) {
+    return <NotFound />;
+  }
   return (
     <div className="flex flex-row justify-around mt-4 min-h-[70vh]">
-      <div className="flex flex-col ml-2 w-[40%]">
-        <img src={product.src} alt={product.title} className="shadow-lg mt-2" />
+      <div className="flex flex-col mt-2 ml-2 w-[40%]">
+        <img src={product.src} alt={product.title} className="shadow-lg" />
       </div>
       <div className="flex flex-col mr-2 w-[50%]">
         <div className="mb-4">
@@ -71,7 +50,6 @@ export default function ProductPage() {
             <h1 className="text-3xl md:text-4xl">{product.title}</h1>
             {status === "authenticated" ? (
               <Toggle
-                className=""
                 aria-label="Toggle bold"
                 onClick={() => handleFavorite(product)}
               >
@@ -79,16 +57,14 @@ export default function ProductPage() {
               </Toggle>
             ) : null}
           </div>
-          <h1 className="mt-2 text-base md:text-lg">{`Категория: ${product.category}`}</h1>
+          <h3 className="mt-2 text-base md:text-lg">{`Категория: ${product.category}`}</h3>
           <p className="py-2 text-lg md:text-xl">{product.description}</p>
         </div>
-        <div>
-          <h1 className="p-2 border border-t-black/10 border-r-0 border-b-black/10 border-l-0 text-4xl">
-            {product.cost}.00 ₽
-          </h1>
-        </div>
+        <h1 className="p-2 border border-t-black/10 border-r-0 border-b-black/10 border-l-0 text-3xl md:text-4xl">
+          {product.cost}.00 ₽
+        </h1>
         <div className="flex justify-between">
-          <div className="flex justify-center w-1/2 max-w-xs">
+          <div className="flex justify-center m-4 w-1/2 max-w-xs">
             {cartItems.some(
               (item) => item.id === product.id && item.quantity >= 1
             ) ? (
@@ -97,7 +73,7 @@ export default function ProductPage() {
               <ButtonMotion>
                 <Button
                   onClick={() => addToCart(product)}
-                  className="m-4 text-lg"
+                  className="text-lg"
                   size={"lg"}
                 >
                   Купить
@@ -105,7 +81,7 @@ export default function ProductPage() {
               </ButtonMotion>
             )}
           </div>
-          <div className="flex justify-center m-4 w-1/2 text-lg">
+          <div className="flex justify-center m-4 w-1/2">
             <ButtonMotion>
               <Button
                 onClick={() => {
@@ -113,19 +89,18 @@ export default function ProductPage() {
                   redirect("/cart");
                 }}
                 size={"lg"}
-                className="p-4"
+                className="p-4 text-lg"
               >
                 Перейти в корзину
               </Button>
             </ButtonMotion>
           </div>
         </div>
-        <div className="flex items-center p-4 border rounded-lg justify">
-          <h3 className="text-lg md:text-xl">
-            Бесплатная доставка при заказе на сумму от 1000 рублей.
-          </h3>
-        </div>
+        <h2 className="flex items-center p-4 border rounded-lg text-lg md:text-xl">
+          Бесплатная доставка при заказе на сумму от 1000 рублей.
+        </h2>
       </div>
     </div>
   );
-}
+};
+export default ProductPage;

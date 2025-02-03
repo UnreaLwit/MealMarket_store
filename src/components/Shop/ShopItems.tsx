@@ -10,21 +10,12 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import ShopFilter from "@/components/Shop/ShopFilter";
-import CardItem from "../../utils/CardItem";
 import ButtonMotion from "../Motion/ButtonMotion";
-
-type Product = {
-  id: number;
-  title: string;
-  description: string;
-  category: string;
-  cost: number;
-  src: string;
-  alt: string;
-};
+import { TProduct } from "@/types/types";
+import CardItem from "@/utils/CardItem";
 
 export function ShopItems() {
-  const [randomProducts, setRandomProducts] = useState<Product[]>([]);
+  const [randomProducts, setRandomProducts] = useState<TProduct[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(20);
   const [filter, setFilter] = useState({
@@ -32,11 +23,7 @@ export function ShopItems() {
     price: "",
     alphabet: "",
   });
-
-  // Функция для обработки изменения фильтров
-  const handleFilterChange = (newFilter: typeof filter) => {
-    setFilter(newFilter);
-  };
+  const [maxPage, setMaxPage] = useState(1);
 
   useEffect(() => {
     const shuffledProducts = [...productsData].sort(() => Math.random() - 0.5);
@@ -67,6 +54,16 @@ export function ShopItems() {
     return filtered;
   }, [filter, randomProducts]);
 
+  useEffect(() => {
+    setMaxPage(Math.ceil(filteredAndSortedProducts.length / productsPerPage));
+    if (
+      currentPage >
+      Math.ceil(filteredAndSortedProducts.length / productsPerPage)
+    ) {
+      setCurrentPage(1);
+    }
+  }, [filteredAndSortedProducts, productsPerPage]);
+
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = filteredAndSortedProducts.slice(
@@ -83,10 +80,7 @@ export function ShopItems() {
   };
 
   const nextPage = () => {
-    if (
-      currentPage <
-      Math.ceil(filteredAndSortedProducts.length / productsPerPage)
-    ) {
+    if (currentPage < maxPage) {
       paginate(currentPage + 1);
     }
   };
@@ -96,13 +90,20 @@ export function ShopItems() {
       paginate(currentPage - 1);
     }
   };
+  const handleFilterChange = (newFilter: typeof filter) => {
+    setFilter(newFilter);
+  };
 
   const handleResetFilters = () => {
     setFilter({ category: "", price: "", alphabet: "" });
+    setCurrentPage(1);
   };
 
   return (
     <div className="flex flex-col justify-center">
+      <h1 className="flex justify-center items-center mb-6 text-4xl">
+        Каталог товаров
+      </h1>
       <div className="flex justify-center">
         <ShopFilter
           filter={filter}
@@ -125,16 +126,14 @@ export function ShopItems() {
                 onClick={prevPage}
                 className={`${
                   currentPage === 1
-                    ? "opacity-50 pointer-events-none "
+                    ? "opacity-50 pointer-events-none"
                     : "cursor-pointer"
                 }`}
               />
             </ButtonMotion>
             {Array.from(
               {
-                length: Math.ceil(
-                  filteredAndSortedProducts.length / productsPerPage
-                ),
+                length: maxPage,
               },
               (_, i) => (
                 <ButtonMotion key={i + 1}>
@@ -159,10 +158,7 @@ export function ShopItems() {
                 <PaginationNext
                   onClick={nextPage}
                   className={`${
-                    currentPage ===
-                    Math.ceil(
-                      filteredAndSortedProducts.length / productsPerPage
-                    )
+                    currentPage === maxPage
                       ? "opacity-50 pointer-events-none"
                       : "cursor-pointer"
                   }`}

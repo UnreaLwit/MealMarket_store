@@ -1,20 +1,9 @@
-// components/MaskedInput.tsx
 import * as React from "react";
 import { IMaskInput } from "react-imask";
 import { cn } from "@/lib/utils";
+import { TMaskedInputProps } from "@/types/types";
 
-interface Props {
-  mask: string;
-  placeholder?: string; // placeholder опциональный
-  className?: string;
-  // ... другие свойства, которые вам нужны (value, onChange, onBlur, и т.д.)
-  //  Если вы используете другие специфические свойства react-imask, добавьте их сюда
-  value?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
-}
-
-const MaskedInput: React.FC<Props> = ({ className, ...props }) => {
+const MaskedInput: React.FC<TMaskedInputProps> = ({ className, ...props }) => {
   return (
     <div className={cn("relative", className)}>
       <IMaskInput
