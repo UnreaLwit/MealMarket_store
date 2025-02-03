@@ -32,7 +32,7 @@ const categories = [
 
 export function HomeCategory() {
   return (
-    <div className="flex justify-center">
+    <div className="flex flex-wrap justify-center">
       {categories.map((product, i) => (
         <div key={i}>
           <Card

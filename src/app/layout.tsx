@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="ru" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-7xl mx-auto min-h-screen flex flex-col select-none`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased container max-w-7xl mx-auto min-h-screen flex flex-col select-none`}
       >
         <SessionProvider>
           <ThemeProvider

@@ -15,24 +15,25 @@ const Navbar = async () => {
 
   return (
     <header className="shadow-sm mt-2 mb-8 px-5 py-3 border rounded-lg">
-      <nav className="flex justify-between items-center">
-        <div className="flex items-center gap-5">
-          <Image
-            className="drop-shadow-md"
-            src="/ShopIcon.webp"
-            alt="logo"
-            width={50}
-            height={50}
-          ></Image>
-          <Link href="/">
-            <span className="drop-shadow-md text-3xl">MealMarket</span>
-          </Link>
-
+      <nav className="flex flex-wrap xl:flex-nowrap justify-between items-center">
+        <div className="flex items-center gap-5 m-2">
+          <div className="flex items-center">
+            <Image
+              className="drop-shadow-md"
+              src="/ShopIcon.webp"
+              alt="logo"
+              width={50}
+              height={50}
+            ></Image>
+            <Link href="/">
+              <span className="drop-shadow-md ml-2 text-3xl">MealMarket</span>
+            </Link>
+          </div>
           <ToggleTheme />
         </div>
         <NavSearch />
         <NavMenu />
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-5 m-2">
           {session && session?.user ? (
             <>
               <NavFavoriteButton />

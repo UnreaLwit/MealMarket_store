@@ -14,7 +14,7 @@ import ButtonMotion from "../Motion/ButtonMotion";
 
 export function NavMenu() {
   return (
-    <NavigationMenu>
+    <NavigationMenu className="z-0 m-2">
       <NavigationMenuList>
         <ButtonMotion>
           <NavigationMenuItem className="shadow-md mr-2 border rounded-lg">

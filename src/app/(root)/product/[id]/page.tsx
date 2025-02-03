@@ -62,13 +62,13 @@ export default function ProductPage() {
 
   return (
     <div className="flex flex-row justify-around mt-4 min-h-[70vh]">
-      <div className="flex flex-col w-[40%]">
+      <div className="flex flex-col ml-2 w-[40%]">
         <img src={product.src} alt={product.title} className="shadow-lg mt-2" />
       </div>
-      <div className="flex flex-col w-[40%]">
+      <div className="flex flex-col mr-2 w-[50%]">
         <div className="mb-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-5xl">{product.title}</h1>
+            <h1 className="text-3xl md:text-4xl">{product.title}</h1>
             {status === "authenticated" ? (
               <Toggle
                 className=""
@@ -79,8 +79,8 @@ export default function ProductPage() {
               </Toggle>
             ) : null}
           </div>
-          <h1 className="mt-2 text-xl">{`Категория: ${product.category}`}</h1>
-          <p className="py-2 text-xl">{product.description}</p>
+          <h1 className="mt-2 text-base md:text-lg">{`Категория: ${product.category}`}</h1>
+          <p className="py-2 text-lg md:text-xl">{product.description}</p>
         </div>
         <div>
           <h1 className="p-2 border border-t-black/10 border-r-0 border-b-black/10 border-l-0 text-4xl">
@@ -105,7 +105,7 @@ export default function ProductPage() {
               </ButtonMotion>
             )}
           </div>
-          <div className="m-4 w-1/2 text-lg">
+          <div className="flex justify-center m-4 w-1/2 text-lg">
             <ButtonMotion>
               <Button
                 onClick={() => {
@@ -113,6 +113,7 @@ export default function ProductPage() {
                   redirect("/cart");
                 }}
                 size={"lg"}
+                className="p-4"
               >
                 Перейти в корзину
               </Button>
@@ -120,7 +121,7 @@ export default function ProductPage() {
           </div>
         </div>
         <div className="flex items-center p-4 border rounded-lg justify">
-          <h3 className="text-xl">
+          <h3 className="text-lg md:text-xl">
             Бесплатная доставка при заказе на сумму от 1000 рублей.
           </h3>
         </div>

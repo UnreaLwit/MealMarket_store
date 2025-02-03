@@ -52,8 +52,8 @@ export function NavSearch() {
 
   return (
     <div
-      className={`relative w-64 shadow-md ${
-        focused ? "w-80" : ""
+      className={`relative   w-64 m-2 shadow-md ${
+        focused ? "" : ""
       } transition-width duration-300 search-container`}
     >
       <Input
@@ -67,7 +67,7 @@ export function NavSearch() {
       />
 
       {focused && query && (
-        <div className="top-full right-0 left-0 z-10 absolute border-gray-200 bg-white dark:bg-black shadow-md mt-1 border rounded-md text-black dropdown">
+        <div className="top-full right-0 left-0 !z-10 absolute border-gray-200 bg-white dark:bg-black shadow-md mt-1 border rounded-md text-black dropdown">
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
               <Link

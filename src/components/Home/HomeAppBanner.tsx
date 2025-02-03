@@ -4,12 +4,12 @@ import React from "react";
 const HomeAppBanner = () => {
   return (
     <div className="flex justify-center items-center">
-      <div className="flex shadow-lg border rounded-lg w-[80%] h-auto">
+      <div className="flex shadow-lg mr-2 ml-2 border rounded-lg max-w-5xl h-auto container">
         <div className="flex flex-col justify-start items-start m-10 w-[40%]">
-          <h1 className="mb-4 font-extrabold text-4xl">
+          <h1 className="mb-4 font-extrabold text-3xl md:text-4xl">
             Оставайся дома и получи все необходимое из нашего магазина!
           </h1>
-          <h2 className="mb-4 font-semibold text-xl">
+          <h2 className="mb-4 font-semibold text-xl md:text-2xl">
             Скачай приложение из Google Play или App Store
           </h2>
           <div className="flex justify-around items-center">
@@ -38,7 +38,7 @@ const HomeAppBanner = () => {
           </div>
         </div>
         <img
-          className="object-contain"
+          className="max-w-[50%] object-contain"
           src="https://rabota.magnit.ru/app/courier_bicycle_mob.ea90604c.png"
           alt="корзина"
           width={500}

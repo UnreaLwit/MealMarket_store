@@ -6,7 +6,7 @@ import ButtonMotion from "../Motion/ButtonMotion";
 
 const HomeTitle1 = () => {
   return (
-    <div className="items-center grid grid-cols-[1fr_auto_1fr] mb-8">
+    <div className="items-center grid grid-cols-[1fr_auto_1fr] mr-2 mb-8">
       <div></div>
       <div className="justify-self-center">
         <h1 className="text-4xl">Популярные товары</h1>
@@ -14,7 +14,7 @@ const HomeTitle1 = () => {
       <div className="justify-self-end">
         <ButtonMotion>
           <Link className="flex items-center text-xl" href="/shop">
-            Больше товаров
+            Магазин
             <FaArrowRight className="ml-2" />
           </Link>
         </ButtonMotion>

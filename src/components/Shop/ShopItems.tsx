@@ -103,7 +103,7 @@ export function ShopItems() {
 
   return (
     <div className="flex flex-col justify-center">
-      <div className="flex justify-start ml-36">
+      <div className="flex justify-center">
         <ShopFilter
           filter={filter}
           onFilterChange={handleFilterChange}

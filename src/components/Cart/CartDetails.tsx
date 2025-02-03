@@ -6,7 +6,7 @@ const CartDetails = () => {
   return (
     <div>
       <div className="flex flex-col justify-center items-center border-2 shadow-lg ml-4 p-4 rounded-lg w-[250px] h-fit text-center">
-        <h2 className="mb-2 font-semibold text-3xl">Детали платежа</h2>
+        <h2 className="mb-2 text-4xl">Детали платежа</h2>
         <div>
           <ul className="border-2 mb-2 rounded-lg">
             <li>Оплата курьеру</li>

@@ -4,11 +4,9 @@ import { SelectSeparator } from "../ui/select";
 const CartInfo = () => {
   return (
     <div>
-      <div className="shadow-lg mt-4 border rounded-lg w-[600px]">
+      <div className="shadow-lg mt-4 mb-4 border rounded-lg w-[600px]">
         <div className="flex flex-col m-4">
-          <h2 className="mb-2 font-semibold text-3xl text-center">
-            Информация о доставке
-          </h2>
+          <h2 className="mb-2 text-4xl text-center">Информация о доставке</h2>
           <span className="text-lg">
             После оплаты заказа мы свяжемся с вами и уточним детали доставки.
             <br />
