@@ -68,8 +68,8 @@ const ProductPage = () => {
         <h1 className="p-2 border border-t-black/10 border-r-0 border-b-black/10 border-l-0 text-3xl md:text-4xl">
           {product.cost}.00 ₽
         </h1>
-        <div className="flex justify-between">
-          <div className="flex justify-center m-4 w-1/2 max-w-xs">
+        <div className="flex justify-around w-[400px]">
+          <div className="flex justify-center m-4 w-1/3 max-w-xs">
             {cartItems.some(
               (item) => item.id === product.id && item.quantity >= 1
             ) ? (
@@ -88,7 +88,7 @@ const ProductPage = () => {
               </ButtonMotion>
             )}
           </div>
-          <div className="flex justify-center m-4 w-1/2">
+          <div className="flex justify-center m-4">
             <ButtonMotion>
               <Button
                 onClick={() => {
@@ -103,7 +103,7 @@ const ProductPage = () => {
             </ButtonMotion>
           </div>
         </div>
-        <h2 className="flex items-center p-4 border rounded-lg text-lg md:text-xl">
+        <h2 className="flex items-center p-4 border rounded-lg font-semibold text-lg md:text-xl">
           Бесплатная доставка при заказе на сумму от 1000 рублей.
         </h2>
       </div>

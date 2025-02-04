@@ -86,7 +86,7 @@ const CartForm = () => {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Имя</FormLabel>
+                <FormLabel className="text-base">Имя</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Введите ваше имя"
@@ -106,7 +106,7 @@ const CartForm = () => {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel className="text-base">Email</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Введите ваш email"
@@ -129,7 +129,7 @@ const CartForm = () => {
             }}
             render={({ field, fieldState }) => (
               <FormItem>
-                <FormLabel>Телефон</FormLabel>
+                <FormLabel className="text-base">Телефон</FormLabel>
                 <FormControl>
                   <MaskedInput
                     mask="+{0} (000) 000-00-00"
@@ -150,7 +150,7 @@ const CartForm = () => {
             name="cardNumber"
             render={({ field, fieldState }) => (
               <FormItem>
-                <FormLabel>Номер карты</FormLabel>
+                <FormLabel className="text-base">Номер карты</FormLabel>
                 <FormControl>
                   <MaskedInput
                     mask="0000 0000 0000 0000"
@@ -170,7 +170,7 @@ const CartForm = () => {
             name="expiryDate"
             render={({ field, fieldState }) => (
               <FormItem>
-                <FormLabel>Дата истечения</FormLabel>
+                <FormLabel className="text-base">Дата истечения</FormLabel>
                 <FormControl>
                   <MaskedInput mask="00/00" placeholder="MM/YY" {...field} />
                 </FormControl>
@@ -186,7 +186,7 @@ const CartForm = () => {
             name="cvv"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>CVV</FormLabel>
+                <FormLabel className="text-base">CVV</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="CVV"

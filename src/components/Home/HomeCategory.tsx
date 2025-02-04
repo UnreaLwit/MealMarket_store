@@ -2,11 +2,6 @@ import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 const categories = [
   {
-    title: "Консервы",
-    src: "https://cdn-icons-png.flaticon.com/512/5987/5987631.png",
-    alt: "Консервы",
-  },
-  {
     title: "Мясные продукты",
     src: "https://cdn-icons-png.flaticon.com/512/1046/1046769.png",
     alt: "Мясные продукты",
@@ -15,6 +10,11 @@ const categories = [
     title: "Молочные продукты",
     src: "https://cdn-icons-png.flaticon.com/512/7295/7295435.png",
     alt: "Молочные продукты",
+  },
+  {
+    title: "Консервы",
+    src: "https://cdn-icons-png.flaticon.com/512/5987/5987631.png",
+    alt: "Консервы",
   },
   {
     title: "Овощи",

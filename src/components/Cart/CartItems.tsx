@@ -30,7 +30,6 @@ const CartItems = () => {
       ) : (
         <div className="shadow-lg border rounded-lg w-[600px]">
           <div className="flex flex-col p-4">
-            <h1 className="mb-2 text-4xl text-center">Список товаров</h1>
             <div>
               <div className="[&::-webkit-scrollbar-thumb]:bg-[#737975]/70 [&::-webkit-scrollbar-track]:bg-[#737975]/30 snap-proximity snap-y [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar]:w-2 min-h-[340px] max-h-[660px] overflow-x-hidden overflow-y-auto scroll-smooth">
                 {cartItems.map((item) => (

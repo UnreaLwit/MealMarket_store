@@ -5,7 +5,7 @@ import ButtonMotion from "../Motion/ButtonMotion";
 
 const HomeBanner = () => {
   return (
-    <div className="flex shadow-lg mr-2 mb-8 ml-2 border rounded-lg w-fit lg:w-full h-auto">
+    <div className="flex shadow-lg mb-8 border rounded-lg w-fit lg:w-full h-auto">
       <div className="flex flex-col justify-start items-start mt-10 mb-10 ml-10 w-[50%]">
         <h1 className="mb-4 font-extrabold text-3xl md:text-4xl">
           Мы доставим магазин к вашему дому

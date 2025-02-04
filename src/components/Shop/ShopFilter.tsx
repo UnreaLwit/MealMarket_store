@@ -116,7 +116,7 @@ const ShopFilter: React.FC<TShopFilterProps> = ({
   const popoverContentClasses = "p-0 w-[200px]";
 
   return (
-    <div className="flex flex-wrap sm:flex-nowrap justify-evenly gap-4 mb-8 w-fit">
+    <div className="flex flex-wrap justify-evenly gap-4 mb-8 w-fit">
       <Popover open={openCategory} onOpenChange={setOpenCategory}>
         <ButtonMotion>
           <PopoverTrigger asChild>
