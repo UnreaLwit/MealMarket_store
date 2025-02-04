@@ -17,6 +17,7 @@ import ButtonMotion from "@/components/Motion/ButtonMotion";
 import { TProduct } from "@/types/types";
 import Counter from "./Counter";
 import useCartStore from "@/providers/cartStore";
+import CounterMotion from "@/components/Motion/CounterMotion";
 
 const CardItem = ({ product }: { product: TProduct }) => {
   const { cartItems, addToCart } = useCartStore();
@@ -69,7 +70,9 @@ const CardItem = ({ product }: { product: TProduct }) => {
               {cartItems.some(
                 (item) => item.id === product.id && item.quantity >= 1
               ) ? (
-                <Counter item={product} />
+                <CounterMotion>
+                  <Counter item={product} />
+                </CounterMotion>
               ) : (
                 <ButtonMotion>
                   <Button

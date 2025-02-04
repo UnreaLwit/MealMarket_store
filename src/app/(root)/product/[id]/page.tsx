@@ -73,7 +73,9 @@ const ProductPage = () => {
             {cartItems.some(
               (item) => item.id === product.id && item.quantity >= 1
             ) ? (
-              <Counter item={product} />
+              <ButtonMotion>
+                <Counter item={product} />
+              </ButtonMotion>
             ) : (
               <ButtonMotion>
                 <Button

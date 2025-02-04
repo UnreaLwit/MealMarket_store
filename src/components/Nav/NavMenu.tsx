@@ -17,7 +17,7 @@ const NavMenu = () => {
     <NavigationMenu className="z-0 m-2">
       <NavigationMenuList>
         <ButtonMotion>
-          <NavigationMenuItem className="shadow-md mr-2 border rounded-lg">
+          <NavigationMenuItem className="shadow-md mr-6 border rounded-lg">
             <Link href="/" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 Главная
@@ -26,7 +26,7 @@ const NavMenu = () => {
           </NavigationMenuItem>
         </ButtonMotion>
         <ButtonMotion>
-          <NavigationMenuItem className="shadow-md !mr-2 border rounded-lg">
+          <NavigationMenuItem className="shadow-md !mr-6 border rounded-lg">
             <Link href="/shop" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 Магазин

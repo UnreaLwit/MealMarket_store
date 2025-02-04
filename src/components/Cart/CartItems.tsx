@@ -4,6 +4,8 @@ import Link from "next/link";
 import useCartStore from "@/providers/cartStore";
 import CartMotion from "../Motion/CartMotion";
 import Counter from "@/utils/Counter";
+import CounterMotion from "../Motion/CounterMotion";
+import ButtonMotion from "../Motion/ButtonMotion";
 
 const CartItems = () => {
   const { cartItems, removeFromCart, clearCart } = useCartStore();
@@ -54,17 +56,20 @@ const CartItems = () => {
                         </span>
                         <div className="m-2 text-2xl">
                           <div key={item.id}>
-                            <Counter item={item} />
+                            <CounterMotion>
+                              <Counter item={item} />
+                            </CounterMotion>
                           </div>
-
-                          <Button
-                            onClick={() => removeFromCart(item.id)}
-                            color="inherit"
-                            variant="outline"
-                            className="my-2"
-                          >
-                            Удалить
-                          </Button>
+                          <ButtonMotion>
+                            <Button
+                              onClick={() => removeFromCart(item.id)}
+                              color="inherit"
+                              variant="outline"
+                              className="my-2"
+                            >
+                              Удалить
+                            </Button>
+                          </ButtonMotion>
                         </div>
                       </div>
                     </div>
@@ -75,15 +80,16 @@ const CartItems = () => {
               <p className="flex justify-center my-4 text-2xl">
                 Итого: {calculateTotal()} ₽
               </p>
-
-              <Button
-                className="flex mx-auto my-2"
-                onClick={handleClearCart}
-                color="inherit"
-                variant="outline"
-              >
-                Очистить корзину
-              </Button>
+              <ButtonMotion>
+                <Button
+                  className="flex mx-auto my-2"
+                  onClick={handleClearCart}
+                  color="inherit"
+                  variant="outline"
+                >
+                  Очистить корзину
+                </Button>
+              </ButtonMotion>
             </div>
           </div>
         </div>
