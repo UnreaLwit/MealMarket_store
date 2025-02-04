@@ -20,6 +20,7 @@ const HomeAppBanner = () => {
               src="https://play.google.com/intl/en_us/badges/static/images/badges/ru_badge_web_generic.png"
               alt="google play"
               className="object-contain"
+              loading="lazy"
             />
           </Link>
           <Link
@@ -31,6 +32,7 @@ const HomeAppBanner = () => {
               src="https://retail.ch-sk.ru/UserFiles/Publications//6b8df6fc-ba8a-41e8-83e8-3b108848877a/app_store_2x.png"
               alt="apple store"
               className="object-contain"
+              loading="lazy"
             />
           </Link>
         </div>
@@ -41,6 +43,7 @@ const HomeAppBanner = () => {
         alt="корзина"
         width={500}
         height={500}
+        loading="lazy"
       />
     </div>
   );

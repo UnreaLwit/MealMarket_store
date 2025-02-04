@@ -45,6 +45,7 @@ const CardItem = ({ product }: { product: TProduct }) => {
                 alt={product.alt}
                 width={150}
                 height={150}
+                loading="lazy"
               />
             </Link>
           </CardHeader>

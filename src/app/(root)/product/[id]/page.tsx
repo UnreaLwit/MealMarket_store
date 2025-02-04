@@ -42,7 +42,12 @@ const ProductPage = () => {
   return (
     <div className="flex flex-row justify-around mt-4 min-h-[70vh]">
       <div className="flex flex-col mt-2 ml-2 w-[40%]">
-        <img src={product.src} alt={product.title} className="shadow-lg" />
+        <img
+          src={product.src}
+          alt={product.title}
+          className="shadow-lg"
+          loading="lazy"
+        />
       </div>
       <div className="flex flex-col mr-2 w-[50%]">
         <div className="mb-4">

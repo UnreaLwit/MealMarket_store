@@ -48,6 +48,7 @@ const HomeCategory = () => {
                 alt={product.alt}
                 width={70}
                 height={70}
+                loading="lazy"
               />
             </CardFooter>
           </Card>

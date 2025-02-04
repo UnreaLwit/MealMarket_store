@@ -32,6 +32,7 @@ const HomeBanner = () => {
           width={300}
           height={300}
           className="object-contain"
+          loading="lazy"
         />
       </div>
     </div>

@@ -44,6 +44,7 @@ const HomeStores = () => {
                 alt={store.alt}
                 width={150}
                 height={150}
+                loading="lazy"
               />
             </CardHeader>
 

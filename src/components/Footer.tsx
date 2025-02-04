@@ -35,6 +35,7 @@ const Footer = () => {
                 alt="payment"
                 width={200}
                 height={50}
+                loading="lazy"
               />
             </div>
           </div>
