@@ -25,6 +25,7 @@ const NavMenu = () => {
             </Link>
           </NavigationMenuItem>
         </ButtonMotion>
+
         <ButtonMotion>
           <NavigationMenuItem className="shadow-md !mr-6 border rounded-lg">
             <Link href="/shop" legacyBehavior passHref>
@@ -34,6 +35,7 @@ const NavMenu = () => {
             </Link>
           </NavigationMenuItem>
         </ButtonMotion>
+
         <ButtonMotion>
           <NavigationMenuItem className="shadow-md border rounded-lg">
             <Link href="/cart" legacyBehavior passHref>
@@ -65,7 +67,7 @@ const ListItem = React.forwardRef<
           {...props}
         >
           <div className="font-medium text-sm leading-none">{title}</div>
-          <p className="line-clamp-2 text-muted-foreground text-sm leading-snug">
+          <p className="text-muted-foreground text-sm line-clamp-2 leading-snug">
             {children}
           </p>
         </a>

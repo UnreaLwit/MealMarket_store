@@ -18,11 +18,11 @@ import productsData from "@/data/productsData";
 import { TShopFilter, TShopFilterProps } from "@/types/types";
 import ButtonMotion from "../Motion/ButtonMotion";
 
-const ShopFilter: React.FC<TShopFilterProps> = ({
+const ShopFilter = ({
   filter,
   onFilterChange,
   handleResetFilters,
-}) => {
+}: TShopFilterProps) => {
   const [openCategory, setOpenCategory] = useState(false);
   const [openPrice, setOpenPrice] = useState(false);
   const [openAlphabet, setOpenAlphabet] = useState(false);
@@ -211,7 +211,7 @@ const ShopFilter: React.FC<TShopFilterProps> = ({
       <ButtonMotion>
         <Button
           onClick={handleResetFilters}
-          className="border-input bg-red-500 hover:bg-red-700 shadow-lg p-2 border rounded-lg text-white"
+          className="bg-red-500 hover:bg-red-700 shadow-lg p-2 border border-input rounded-lg text-white"
         >
           Сбросить все фильтры
         </Button>

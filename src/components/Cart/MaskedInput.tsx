@@ -3,7 +3,7 @@ import { IMaskInput } from "react-imask";
 import { cn } from "@/lib/utils";
 import { TMaskedInputProps } from "@/types/types";
 
-const MaskedInput: React.FC<TMaskedInputProps> = ({ className, ...props }) => {
+const MaskedInput = ({ className, ...props }: TMaskedInputProps) => {
   return (
     <div className={cn("relative", className)}>
       <IMaskInput

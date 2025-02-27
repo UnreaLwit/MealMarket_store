@@ -6,7 +6,7 @@ const productsData = [
       "Нежный зеленый горошек, законсервированный в рассоле. Отлично подходит для салатов, гарниров и различных блюд. Витаминный и питательный продукт, который сохраняет свежесть и аромат.",
     category: "Консервы",
     cost: 164,
-    src: "https://spar-online.ru/upload/iblock/2c3/2c3d62fec012f011430795d478f2d2d6.jpg",
+    src: "https://st18.stpulscen.ru/images/product/084/868/048_big.jpg",
     alt: "pic1",
   },
   {
@@ -196,7 +196,7 @@ const productsData = [
       "Домашний компот из свежих яблок. Отлично подходит для утоления жажды и улучшения пищеварения. Богат витаминами и минералами, имеет сладкий и освежающий вкус.",
     category: "Консервы",
     cost: 271,
-    src: "https://myfresh.ru/images/h/e9b1033f19678483c0a08e6808386087/1200/product_image/image/7272/large2x_______-______-_.jpg",
+    src: "https://eda.ru/images/RecipePhoto/390x390/kompot-iz-yablok-so-svekloy_174635_photo_182176.jpg",
     alt: "pic20",
   },
   {
@@ -436,7 +436,7 @@ const productsData = [
       "Густая сметана, идеально подходит для приготовления различных блюд. Богата белком, витаминами и минералами. Идеально для салатов, соусов и гарниров.",
     category: "Молочные продукты",
     cost: 386,
-    src: "https://vodovoz.ru/upload/iblock/fde/fde461592cb030f5ba7d82b75790ee91.jpg",
+    src: "https://cdn.metro-cc.ru/ru/ru_pim_105864001001_01.png?maxwidth=460&maxheight=460&format=jpg&quality=90&width=460&height=460",
     alt: "pic44",
   },
   {
